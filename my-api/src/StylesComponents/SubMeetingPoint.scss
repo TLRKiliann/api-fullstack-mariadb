@@ -1,0 +1,306 @@
+/*SubMeeting*/
+
+.mainfirst--div {
+  margin: 10px auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.first--data {
+  width: 860px;
+  height: auto;
+  margin: 0px 0px;
+  margin-left: 23%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  background: linear-gradient(170deg, #1e90ff, blue, navy);
+  border-radius: 15px;
+  border: 1px solid whitesmoke;
+  box-shadow: 0px 0px 2px #3b3c47;
+  color: white;
+}
+
+.capsview--div {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+
+.left--divview {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+
+.caps--div {
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left--div {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*Viewer*/
+
+.pview--left {
+  width: 100%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-family: 'Consolas';
+  font-weight: bold;
+}
+
+.pview--left p {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.p--left {
+  min-width: 120px;
+  display: flex;
+  justify-content: right;
+  font-family: 'Consolas';
+  font-weight: bold;
+}
+
+.p--left p {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.pinput--date input {
+  margin: 5px 0px;
+  padding: 0px 5px;
+  width: 80px;
+  font-size: 0.9rem;
+  background: lightgrey;
+}
+
+.right--div {
+  width: 450px;
+  display: flex;
+  padding: 0px 10px;
+}
+
+.right--divhour {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.input--hour {
+  display: flex;
+  justify-content: left;
+  background: lightgrey;
+}
+
+.input--hour input {
+  width: 40px;
+  display: flex;
+  justify-content: left;
+  background: lightgrey;
+}
+
+.input--right {
+  margin: auto 10px;
+  display: flex;
+  justify-content: right;
+}
+
+.input--right input {
+  font-size: 0.9rem;
+  background: lightgrey;
+}
+
+
+/*TRUC QUI BLOCK PADDING BTN!!!*/
+
+.changephone--div {
+  margin: auto;
+  display: flex;
+}
+
+.changephone--div input {
+  font-size: 0.9rem;
+}
+
+/*TRUC QUI BLOCK PADDING BTN!!!*/
+
+.btn--modify {
+  margin: auto;
+  margin-left: 10px;
+  padding: 3px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Consolas';
+  font-size: 0.9rem;
+  background: linear-gradient(170deg, royalblue, navy);
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px white;
+  color: white;
+}
+
+.btn--modify:hover {
+  background: lightblue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+.changephone--btndiv {
+  margin: auto;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.changephone--btndiv button {
+  width: 60px;
+  margin: auto;
+  padding: 5px 0px;
+}
+
+/*Location-Map second component*/
+
+.caps--location {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.p--location {
+  margin-left: 30px;
+}
+
+.p--location p {
+  margin: auto;
+  font-family: 'Consolas';
+  font-weight: bold;
+}
+
+.input--location {
+  margin: 0px 10px;
+  margin-right: 20px;
+  width: 504px;
+}
+
+.input--location input {
+  width: 100%;
+  padding: 0px 6px;
+  width: 500px;
+  font-size: 0.9rem;
+  background: lightgrey;
+}
+
+.a--location {
+  margin-left: 10px; 
+}
+
+.hwg--a {
+  width: 40px;
+  padding: 4px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(170deg, royalblue, navy);
+  border: 1px solid royalblue;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px white;
+  color: white;
+}
+
+.hwg--a:hover {
+  background: lightblue;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+.right--div {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*Textarea of second component*/
+
+.caps--textarea {
+  display: flex;
+}
+
+.subtextarea {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.text--area {
+  width: 710px;
+  height: 60px;
+  margin-left: 10px;
+  margin: 10px;
+  font-size: 0.9rem;
+  background: lightgrey;
+}
+
+/*BTN of second component*/
+.btn--meetingdelete {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.btn--meetingdelete button {
+  width: 100px;
+  margin: 10px 10px;
+  padding: 5px 10px;
+
+  font-family: 'Consolas';
+  font-weight: bold;
+  background: linear-gradient(170deg, royalblue, navy);
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px white;
+  color: white;
+}
+
+.btn--meetingdelete button:hover {
+  background: lightblue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+.delete--btn {
+  margin-right: 10px;
+}
+
+.input--visiblecolor {
+  color: red;
+}

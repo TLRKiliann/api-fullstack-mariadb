@@ -1,0 +1,85 @@
+.navbar--div {
+  width: 100%;
+  height: 80px;
+  margin: auto;
+  display: flex;
+  background: #3b3c47;
+  border-bottom: 1px solid grey;
+}
+
+.subnavbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  /*border: 2px solid yellow;*/
+}
+
+.nav--div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  /*border: 2px solid orange;*/
+}
+
+.img--tag {
+  margin-left: 10px;
+}
+
+.middlenav--div {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  /*border: 2px solid lightgreen;*/
+}
+
+.middlenav--div li {
+  list-style: none;
+}
+
+.middlenav--div li:hover {
+  transform: scale(1.1);
+}
+
+.tag--link {
+  margin: 0px 20px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-family: 'Consolas';
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: lightgrey;
+
+  /*border: 2px solid red;*/
+}
+
+.tag--link:hover {
+  color: #1e90ff;
+}
+
+.navbar--login {
+  margin: 0px 30px;
+  padding: 3px 10px;
+  display: flex;
+  
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  background: lightgrey;
+  border: 1px solid royalblue;
+  border-radius: 7px;
+  color: royalblue;
+}
+
+.navbar--login:hover {
+  background: royalblue;
+  color: whitesmoke;
+}
