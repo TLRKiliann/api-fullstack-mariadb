@@ -1,0 +1,226 @@
+.phonecontact {
+  /*border: 2px solid orange;*/
+  min-height: 100vh;
+}
+
+.phonecontact h1 {
+  font-family: 'Consolas';
+  margin: 20px 20px;
+  text-shadow: 1px 1px 1px black;
+}
+
+details {
+  margin: 20px 20px;
+  cursor: pointer;
+  color: orange;
+  /*border: 2px solid white;*/
+}
+
+.details--div:hover {
+  color: orange;
+}
+
+summary {
+  width: 60px;
+  padding: 10px 10px;
+  font-size: 1.4rem;
+  color: lightgreen;
+
+  /*border: 2px solid white;*/ 
+}
+
+details p {
+  margin: auto 20px;
+}
+
+.searchSwitch {
+  width: 250px;
+  display: flex;
+}
+
+.searchSwitch button {
+  width: 180px;
+  margin-left: 40px;
+  padding: 8px 10px;
+  font-family: 'Consolas';
+  font-weight: bold;
+  background: #3b3c47;
+  border: 1px solid #3b3c47;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px #000;
+  color: white;
+}
+
+.searchSwitch button:hover {
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 3px;
+  color: blue;
+}
+
+.div--xclosephone {
+  display: flex;
+  justify-content: right;
+  cursor: pointer;
+}
+
+.div--xclosephone p {
+  margin-right: 15px;
+  padding: 4px 8px;
+  font-family: 'Times';
+  background: lightgrey;
+  border-radius: 50%;
+  color: blue;
+}
+
+.div--xclosephone p:hover {
+  background: blue;
+  border-radius: 50%;
+  color: lightgrey;
+}
+
+.search {
+  position: absolute;
+  top: 0px;
+
+  width: 500px;
+  height: 400px;
+  margin-top: 15%;
+  margin-right: 35%;
+  margin-left: 35%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(170deg, royalblue, blue, navy);
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px white;
+  opacity: 1;
+  color: lightgreen;
+
+  animation-name: magicsearch;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-cont: 1;
+}
+
+@keyframes magicsearch {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sub--search {
+  display: flex;
+  justify-content: center;
+}
+
+.sub--search h2 {
+  font-size: 2rem;
+}
+
+.sub--searchnext {
+  display: flex;
+  justify-content: center;
+}
+
+.sub--searchnext input {
+  width: 300px;
+  margin-top: 10px;
+  padding: 5px 3px;
+  font-family: 'Consolas';
+  font-size: 1.2rem;
+  background: lightgrey;
+}
+
+.sub--searchnext button {
+  margin-top: 50px;
+  padding: 5px 40px;
+  font-size: 1.2rem;
+  background: linear-gradient(170deg, royalblue, blue, royalblue);
+  border-radius: 3px;
+  border: 1px solid royalblue;
+  box-shadow: 0px 0px 3px white;
+  color: lightgreen;
+}
+
+.sub--searchnext button:hover {
+  background: linear-gradient(170deg, lightblue, lightblue, blue);
+  color: blue;
+}
+
+.sub--searchnext button:active {
+  transform: scale(1.1);
+  background: navy;
+  color: lightgreen;
+}
+
+.sub--searchnext p {
+  padding: 20px 5px;
+  font-family: 'Consolas';
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: orange;
+}
+
+.div--separator {
+  margin: 30px 0px;
+}
+
+/*secdatas*/
+
+.phoneCall--data {
+  margin: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid lightgreen;
+}
+
+.inter--data {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  color: lightgreen;
+}
+
+.divphone--data {
+  width: 320px;
+  margin: 10px 0px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.divphone--data p {
+  margin: 5px 20px;
+  font-size: 1.0rem;
+}
+
+.divphone--datasec {
+  width: 320px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.divphone--datasec p {
+  margin: 5px 20px;
+  font-size: 1.0rem;
+}
+
+.locationphone--data {
+  width: 500px;
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: left;
+  align-items: center;
+  text-align: justify;
+  font-size: 1.0rem;
+}

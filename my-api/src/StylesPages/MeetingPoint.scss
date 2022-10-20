@@ -1,0 +1,212 @@
+.meetingpoint {
+  min-height: 100vh;
+}
+
+.meetingpoint h1 {
+  font-family: 'Consolas';
+  margin: 0px 20px;
+  padding: 20px 0px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.appointment--switch {
+  position: absolute;
+  top: 170px;
+  left: 40px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment--switch button {
+  width: 300px;
+  padding: 5px 10px;
+  font-family: 'Consolas';
+  font-weight: bold;
+  background: #3b3c47;
+  border: 1px solid #3b3c47;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px #000;
+  color: white;
+}
+
+.appointment--switch button:hover {
+  background: lightblue;
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+.appointment--reorder {
+  position: absolute;
+  top: 214px;
+  left: 40px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment--reorder button {
+  width: 300px;
+  padding: 5px 10px;
+  font-family: 'Consolas';
+  font-weight: bold;
+  background: #3b3c47;
+  border: 1px solid #3b3c47;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px #000;
+  color: white;
+}
+
+.appointment--reorder button:hover {
+  background: lightblue;
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+.appointment--refresh {
+  position: absolute;
+  top: 258px;
+  left: 40px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment--refresh button {
+  width: 300px;
+  padding: 5px 10px;
+  font-family: 'Consolas';
+  font-weight: bold;
+  background: #3b3c47;
+  border: 1px solid #3b3c47;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px #000;
+  color: white;
+}
+
+.appointment--refresh button:hover {
+  background: lightblue;
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+
+/*Create meetingPoint*/
+.frameofsearch {
+  position: absolute;
+  top: 22%;
+  left: 33%;
+  width: 580px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Consolas';
+  background: linear-gradient(170deg, royalblue, blue, navy);
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px white; 
+}
+
+.div--xclose {
+  display: flex;
+  justify-content: right;
+  cursor: pointer;
+}
+
+.div--xclose p {
+  margin: auto 0px;
+  padding: 4px 8px;
+  font-family: 'Times';
+  background: lightgrey;
+  border-radius: 50%;
+  color: blue;
+}
+
+.div--xclose p:hover {
+  background: blue;
+  border-radius: 50%;
+  color: lightgrey;
+}
+
+
+.title--newappointment {
+  display: flex;
+  justify-content: center;
+}
+
+.divMP--content {
+  margin: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-weight: bold;
+}
+
+.divMP--content input {
+  margin-right: 110px;
+  margin-left: 10px;
+  background: lightgrey;
+}
+
+.div--textarealabel label {
+  margin: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-weight: bold;
+}
+
+/*BTN Save New Appointment*/
+
+.divbtn--createmeeting {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--createmeeting {
+  padding: 3px 10px;
+  background: royalblue;
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px white;
+  color: whitesmoke;
+}
+
+.btn--createmeeting:hover {
+  background: lightblue;
+  border: 1px solid lightblue;
+  color: blue;
+}
+
+.create--div {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+
+.create--div h3 {
+  text-shadow: 1px 1px 1px black;
+}
+
+.create--div button {
+  margin: 0px 10px;
+}
+
+.lastmainpoint--div {
+  height: auto; 
+}

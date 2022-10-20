@@ -1,0 +1,208 @@
+.anima-intro {
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0; 
+
+  animation-name: login-anim;
+  animation-delay: 0s;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes login-anim {
+  0% {
+    background: black;
+    opacity: 1;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.login {
+  margin-top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 1;
+
+  padding-left: 20px;
+
+  animation-name: login-intro;
+  animation-delay: 0s;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes login-intro {
+  0% {
+    background: black;
+    opacity: 0;
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.login h1 {
+  font-family: 'Consolas';
+  margin: 20px 0px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.frame {
+  position: absolute;
+  width: 500px;
+  margin: 5% 30%;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(170deg, royalblue, blue, navy);
+  border: 1px solid dodgerblue;
+  border-radius: 15px;
+  box-shadow: 0px 0px 3px white;
+
+  animation-name: frame-intro;
+  animation-delay: 0s;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes frame-intro {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.login--h2 {
+  text-align: center;
+  font-family: 'Consolas';
+}
+
+.subframe {
+  margin: 5px 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  font-family: 'Consolas';
+  font-size: 1.0rem;
+  font-weight: bold;
+}
+
+.subframe label {
+  margin: 20px 10px;
+}
+
+.login--input {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+.divbtn--login {
+  padding: 10px 0px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--login {
+  margin: 0px 0px;
+  padding: 10px 20px;
+
+  font-family: 'Consolas';
+  font-size: 1rem;
+  font-weight: bold;
+
+  background: linear-gradient(160deg, royalblue, blue, navy);
+  border: 1px solid dodgerblue;
+  box-shadow: 0px 0px 5px whitesmoke;
+  border-radius: 3px;
+  color: whitesmoke;
+}
+
+.btn--login:hover {
+  background: lightblue;
+  color: black;
+}
+
+.notification p {
+  width: 40%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+
+  text-align: center;
+  font-size: 1.2rem;
+  background: linear-gradient(170deg, orange, red);
+  border: 1px solid blue;
+  border-radius: 20px;
+  color: orange;
+}
+
+.loginok p {
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  background: linear-gradient(170deg, royalblue, blue);
+  border: 1px solid blue;
+  border-radius: 20px;
+  color: lightgreen;
+}
+
+.div--subscribe--btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.subscribe--btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+
+  font-family: 'Consolas';
+  font-size: 1rem;
+  font-weight: bold;
+
+  background: linear-gradient(160deg, royalblue, blue, navy);
+  border: 1px solid dodgerblue;
+  box-shadow: 0px 0px 5px whitesmoke;
+  border-radius: 3px;
+  color: whitesmoke;
+}
+
+.subscribe--btn:hover {
+  background: lightblue;
+  border: 1px solid steelblue;
+  color: black;
+}
