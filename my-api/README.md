@@ -14,6 +14,8 @@ API-FULLSTACK_MARIADB was made by CRA + TypeScript :
 
 └─ $ ▶ npm install --save-dev sass
 
+└─ $ ▶ npm install react-icons --save
+
 - Then:
 
 └─ $ ▶ npm start
