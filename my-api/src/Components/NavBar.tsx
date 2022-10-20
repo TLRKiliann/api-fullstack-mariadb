@@ -43,10 +43,10 @@ export const NavBar = () => {
           </li>
         </nav>
 
-        {!usrEmail ? (
+        {usrEmail ? (
           <span 
             style={{
-              margin: "0px 20px",
+              margin: "0px 10px",
               padding: "10px",
               fontFamily: "Consolas",
               textShadow: "1px 1px 1px purple",
