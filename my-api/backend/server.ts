@@ -2,7 +2,8 @@ import express, {Request, Response, NextFunction} from 'express';
 import mariadb from 'mariadb';
 import dotenv from 'dotenv';
 
-//const login = require('./Routes/Login');
+const meetingpoint = require('./routes/meeting');
+const phonecontact = require('./routes/phone');
 
 const app = express();
 
@@ -40,7 +41,7 @@ const pool = mariadb.createPool({
 });
 
 // GET MARIADB
-app.get('/api/getAllMembers', async (request:Request,
+/*app.get('/api/getAllMembers', async (request:Request,
   response:Response):Promise<void> => {
   try {
       const result = await pool.query("select * from meetingpoint");
@@ -48,7 +49,7 @@ app.get('/api/getAllMembers', async (request:Request,
   } catch (err) {
     throw err;
   }
-});
+});*/
 
 app.get('/api/getByDate', async(request:Request,
   response:Response):Promise<void> => {
@@ -210,14 +211,15 @@ app.delete('/api/delete/:id', async (request, response, next) => {
   } 
 });
 
-app.get('/api/getAllPhone', async (request:Request, response:Response) => {
+
+/*app.get('/api/getAllPhone', async (request:Request, response:Response) => {
   try {
     const result = await pool.query("select * from phonecontact");
     response.status(200).send(result);
   } catch (err) {
     throw err;
   } 
-});
+});*/
 
 
 //phonecontact Table
@@ -301,6 +303,9 @@ app.post("/signup", async (req, res, next) => {
   }
   next();
 });
+
+app.use('/api/getAllMembers', meetingpoint);
+app.use('/api/getAllPhone', phonecontact)
 
 app.listen(PORT, (): void => {
   console.log(`[+] Server is running on port ${PORT} !`)
