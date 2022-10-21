@@ -50,12 +50,36 @@ app.get('/api/getAllMembers', async (request:Request,
   }
 });
 
-app.get('/api/getByDateHour', async(request:Request,
+app.get('/api/getByDate', async(request:Request,
   response:Response):Promise<void> => {
   try {
     const result = await pool.query("SELECT * FROM meetingpoint \
-      WHERE DATE(STR_TO_DATE(datee, '%d-%m-%Y'))\
-      ORDER BY DATE(STR_TO_DATE(datee, '%d-%m-%Y')) ASC");
+      ORDER BY DATE(STR_TO_DATE(datee, '%d-%m-%Y %H')),\
+      TIME(STR_TO_DATE(datee, '%d-%m-%Y %H')) ASC");
+    response.status(200).json(result);
+  } catch (err) {
+    throw err;
+  }
+});
+
+app.get('/api/getByHour', async(request:Request,
+  response:Response):Promise<void> => {
+  try {
+    const result = await pool.query("SELECT * FROM meetingpoint \
+      WHERE HOUR(STR_TO_DATE(datee, '%d-%m-%Y %H:%i'))\
+      ORDER BY HOUR(STR_TO_DATE(datee, '%d-%m-%Y %H:%i')) ASC");
+    response.status(200).json(result);
+  } catch (err) {
+    throw err;
+  }
+});
+
+app.get('/api/getByHour', async(request:Request,
+  response:Response):Promise<void> => {
+  try {
+    const result = await pool.query("SELECT * FROM meetingpoint \
+      WHERE TIME_FORMAT(datee, '%d-%m-%Y %H:%i')\
+      ORDER BY TIME_FORMAT(datee, '%d-%m-%Y %H:%i') ASC");
     response.status(200).json(result);
   } catch (err) {
     throw err;
