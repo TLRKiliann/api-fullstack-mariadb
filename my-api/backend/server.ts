@@ -152,7 +152,7 @@ app.put('/api/updateNum/:id', async (request, response) => {
   } 
 });
 
-// PUT firstname (switch)
+// PUT firstname (switch (editNum))
 app.put('/api/updatename/:id', async (request, response) => {
   const id = request.body.id;
   const editName: boolean = request.body.editName;
@@ -161,7 +161,7 @@ app.put('/api/updatename/:id', async (request, response) => {
     const result = await pool.query("update meetingpoint set\
       editName = ? where id = ?",
       [editName, id]);
-    response.status(200).send();
+    response.status(200).json();
   } catch (err) {
     throw err;
   } 
@@ -240,6 +240,20 @@ app.post('/api/createPhone', async (request:Request, response:Response) => {
   }
 });
 
+//Search by name phonecontact
+app.get('/api/getByName', async (request:Request, response:Response) => {
+  const lastname: string = request.body.lastname;
+  try {
+    const resultName = await pool.query("SELECT * FROM\
+      phonecontact ORDER BY lastname ASC",
+    [lastname]);
+    response.status(200).json(resultName)
+  } catch (error) {
+    throw error
+  }
+});
+
+//Delete phonecontact
 app.delete('/api/deletePhone/:id', async (request, response) => {
   const id = request.params.id;
   try {
