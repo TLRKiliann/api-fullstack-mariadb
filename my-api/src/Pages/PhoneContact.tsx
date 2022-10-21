@@ -27,14 +27,12 @@ export const PhoneContact:React.FC = () => {
   };
 
   const handleResultPhone = (event: React.MouseEvent<HTMLButtonElement>) => {
-    //const searchName = event.target.value;
     setSearchName(searchName);
     const retrievePhone = secDatas.map(secData => secData).filter(secData => {
       return secData.firstname === searchName
         ? `${secData.firstname} ${secData.phone}` : null;
     })
     event.preventDefault();
-    //console.log(retrievePhone)
     if (searchName === "") {
       setFilterData([]);
     } else {
@@ -67,11 +65,13 @@ export const PhoneContact:React.FC = () => {
 
       <details className="details--div">
         <summary>info</summary>
-        <p>
+        <li>
           You can save firstname, lastname, phone, email & location from Meeting Point
           with button register of corresponding id !<br/>
+        </li>
+        <li>
           You can search contact by firstname.
-        </p>
+        </li>
       </details>
 
       <div className="searchSwitch">
@@ -147,7 +147,9 @@ export const PhoneContact:React.FC = () => {
             </div>
 
             <div>
-              <button onClick={() => handlePhoneDelete(secData.id)}>
+              <button 
+                onClick={() => handlePhoneDelete(secData.id)}
+                className="btn--phonedelete">
                 Delete
               </button>
             </div>
