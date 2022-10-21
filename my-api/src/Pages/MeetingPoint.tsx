@@ -33,6 +33,8 @@ export const MeetingPoint:React.FC = () => {
   const [notice, setNotice] = useState<string>("");
   const [createNewMeeting, setCreatNewMeeting] = useState<boolean>(false);
 
+  const [switchLastname, setSwitchLasname] = useState<boolean>(false);
+
   useEffect(() => {
     meetingServices
       .getAll()
@@ -68,7 +70,7 @@ export const MeetingPoint:React.FC = () => {
   };
 
   const handleReorderHour = async () => {
-    console.log("Hour clicked !");
+    //console.log("Hour clicked !");
 
     await meetingServices
       .getByOrderHour()
@@ -80,7 +82,7 @@ export const MeetingPoint:React.FC = () => {
       })
   };
 
-  console.log("After handleReorder", datas)
+  //console.log("After handleReorder", datas)
   //Create new appointment (POST method)
   const generateId = () => {
     const maxId = datas.length > 0
@@ -353,9 +355,53 @@ export const MeetingPoint:React.FC = () => {
     }
   };
 
+  const handleSearchLasname = () => {
+    setSwitchLasname(!switchLastname);
+  };
+
   return (
     <div className="meetingpoint">
       <h1>Meeting Point</h1>
+
+      {switchLastname ? (
+        <div className="dash--searchLastname">
+          <div className="subdash--searchLastname">
+
+            <div className="div--topcruze">
+              <p
+                className="lastname--cruze"
+                onClick={handleSearchLasname}
+              >
+                X
+              </p>
+            </div>
+
+            <h2>Search By Lastname</h2>
+
+            <div className="input--btnlastnamesearch">
+              <input
+                type="text"
+
+                value=""
+              
+                placeholder="Enter lastname here..."
+                style={{padding: '5px 3px'}} 
+              />
+              <button>
+                Search
+              </button>
+            </div>
+
+            <p style={{color: 'lightgreen'}}>Response of your Request :</p>
+            <span>
+              Value of search Value of searcValue of searc
+              Value of searc Value of searc Value of searc
+              Value of searc Value of searc Value of searc
+            </span>
+          </div>
+        </div>
+      ) : null}
+
 
       <div className="create--div">
 
@@ -379,6 +425,13 @@ export const MeetingPoint:React.FC = () => {
             onClick={handleReorderHour}
           >
             Reorder By Hour
+          </button>
+        </div>
+
+        <div className="appointment--searchLastname">
+          <button
+            onClick={handleSearchLasname}>
+            Search By Lastname
           </button>
         </div>
 
@@ -502,7 +555,7 @@ export const MeetingPoint:React.FC = () => {
                   type="submit"
                   className="btn--createmeeting"
                 >
-                  Save New Appointment
+                  Save New Meeting
                 </button>
               </div>
 
