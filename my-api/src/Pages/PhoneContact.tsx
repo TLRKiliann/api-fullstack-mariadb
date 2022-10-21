@@ -13,13 +13,28 @@ export const PhoneContact:React.FC = () => {
   useEffect(() => {
     phoneServices
       .getAllContact()
-      .then((initialContact:any) => {
+      .then((initialContact: any) => {
         setSecDatas(initialContact);
       })
   }, []);
 
-  const switchSearch= () => {
+  const switchSearch = () => {
     setSwitchContactSearch(!switchContactSearch);
+  };
+
+  const handleSearchByName = () => {
+    console.log("clicked")
+    const searchNameObj = secDatas.map(secData => secData);
+    console.log(searchNameObj)
+
+    phoneServices
+      .getOrderByName()
+      .then(returnData => {
+        setSecDatas(returnData)
+      })
+      .catch((error) => {
+        console.log("Error to search by Name !")
+      });
   };
 
   const writterName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,6 +92,12 @@ export const PhoneContact:React.FC = () => {
       <div className="searchSwitch">
         <button onClick={switchSearch}>
           Search Contact
+        </button>
+      </div>
+
+      <div className="searchByName">
+        <button onClick={handleSearchByName}>
+          Order By Lastname
         </button>
       </div>
 
