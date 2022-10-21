@@ -12,6 +12,8 @@ const postUrl: string = '/api/createPhone/';
 //const deleteUrl: string = 'http://localhost:3001/getAllPhone';
 const deleteUrl: string = '/api/deletePhone';
 
+const getNamePhone: string = '/api/getByName';
+
 const getAllContact = async () => {
   const request = app.get<DataTypeContactProps>(getUrlPhone)
   return await request.then(response => response.data)
@@ -20,6 +22,11 @@ const getAllContact = async () => {
 const createPhone = (formData: any) => {
   const request = app.post<any>(postUrl, formData)
   return request.then((response: any) => response.data)
+};
+
+const getOrderByName = async () => {
+  const request = app.get<DataTypeContactProps>(getNamePhone)
+  return await request.then((response: any) => response.data)
 };
 
 const removePhone = async (id: number): Promise<void> => {
@@ -49,6 +56,7 @@ const removePhone = async (id: number): Promise<void> => {
 const functionPhone = {
 	getAllContact,
   createPhone,
+  getOrderByName,
   removePhone
 };
 

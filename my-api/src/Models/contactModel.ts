@@ -1,5 +1,5 @@
 export type DataTypeContact = {
-  id?: any | null;
+  id?: number | null;
   firstname: string;
   lastname: string;
   phone: string;

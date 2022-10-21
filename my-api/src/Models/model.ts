@@ -1,5 +1,5 @@
 export type DataType = {
-  id?: any | null;
+  id?: number | null;
   datee: string;
   hour: string;
   location: string;
