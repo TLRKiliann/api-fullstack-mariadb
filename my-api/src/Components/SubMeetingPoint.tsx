@@ -96,7 +96,7 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
             </div>
             <div className="pinput--date">
               <input
-                value={props.datee}
+                value={props.datee.slice(0,10)}
                 onChange={(event) => props.setDatee(event.target.value)} />
             </div>
           </div>
@@ -106,7 +106,7 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
             </div>
             <div className="input--hour">
               <input
-                value={props.hour}
+                value={props.datee.slice(11,16)}
                 onChange={(event) => props.setHour(event.target.value)} />
             </div>
           </div>

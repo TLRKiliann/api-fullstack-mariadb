@@ -40,7 +40,7 @@
   color: blue;
 }
 
-.appointment--reorder {
+.appointment--reorderDate {
   position: absolute;
   top: 214px;
   left: 40px;
@@ -51,7 +51,18 @@
   justify-content: center;
 }
 
-.appointment--reorder button {
+.appointment--reorderHour {
+  position: absolute;
+  top: 258px;
+  left: 40px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment--reorderDate button {
   width: 300px;
   padding: 5px 10px;
   font-family: 'Consolas';
@@ -63,7 +74,27 @@
   color: white;
 }
 
-.appointment--reorder button:hover {
+.appointment--reorderHour button {
+  width: 300px;
+  padding: 5px 10px;
+  font-family: 'Consolas';
+  font-weight: bold;
+  background: #3b3c47;
+  border: 1px solid #3b3c47;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px #000;
+  color: white;
+}
+
+.appointment--reorderDate button:hover {
+  background: lightblue;
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+.appointment--reorderHour button:hover {
   background: lightblue;
   border: 1px solid royalblue;
   border-radius: 3px;
@@ -73,7 +104,7 @@
 
 .appointment--refresh {
   position: absolute;
-  top: 258px;
+  top: 302px;
   left: 40px;
   width: 200px;
   display: flex;
@@ -115,7 +146,7 @@
   font-family: 'Consolas';
   background: linear-gradient(170deg, royalblue, blue, navy);
   border-radius: 15px;
-  box-shadow: 0px 0px 5px white; 
+  box-shadow: 0px 0px 5px white;
 }
 
 .div--xclose {
@@ -139,14 +170,16 @@
   color: lightgrey;
 }
 
-
 .title--newappointment {
   display: flex;
   justify-content: center;
+  color: lightgreen;
 }
 
 .divMP--content {
-  margin: 5px 0px;
+  width: 65%;
+  margin: 10px auto;
+  margin-right: 120px;
   display: flex;
   align-items: center;
   justify-content: right;
@@ -154,34 +187,47 @@
 }
 
 .divMP--content input {
-  margin-right: 110px;
   margin-left: 10px;
   background: lightgrey;
+  border: 1px solid lightgreen;
 }
 
 .div--textarealabel label {
-  margin: 10px 10px;
+  width: 84%;
+  margin: auto;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: left;
   font-weight: bold;
 }
 
+.text--areacreate {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
 /*BTN Save New Appointment*/
 
 .divbtn--createmeeting {
-  margin-top: 20px;
+  margin: 10px 0px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .btn--createmeeting {
-  padding: 3px 10px;
-  background: royalblue;
-  border: 1px solid royalblue;
+  padding: 10px 10px;
+  font-family: 'Consolas';
+  font-size: 1rem;
+  font-weight: bold;
+
+  background: linear-gradient(160deg, royalblue, blue, navy);
+  border: 1px solid dodgerblue;
+  box-shadow: 0px 0px 5px whitesmoke;
   border-radius: 3px;
-  box-shadow: 0px 0px 3px white;
   color: whitesmoke;
 }
 

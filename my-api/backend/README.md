@@ -152,18 +152,13 @@ MariaDB [mytable]> DESC loggers;
 PHONECONTACT
 
 ```
-MariaDB [mytable]> DESC phonecontact;
-+-----------+--------------+------+-----+---------+-------+
-| Field     | Type         | Null | Key | Default | Extra |
-+-----------+--------------+------+-----+---------+-------+
-| id        | int(11)      | NO   | PRI | NULL    |       |
-| firstname | varchar(255) | YES  |     | NULL    |       |
-| lastname  | varchar(255) | YES  |     | NULL    |       |
-| phone     | varchar(255) | YES  |     | NULL    |       |
-| email     | varchar(255) | YES  |     | NULL    |       |
-| location  | varchar(255) | YES  |     | NULL    |       |
-+-----------+--------------+------+-----+---------+-------+
-6 rows in set (0.004 sec)
+MariaDB [mytable]> SELECT * FROM phonecontact;
++----+-----------+----------+---------------+---------------+----------+
+| id | firstname | lastname | phone         | email         | location |
++----+-----------+----------+---------------+---------------+----------+
+|  1 | Treza     | i        | 021 321 23 23 | rica@mail.com | Cheinh   |
++----+-----------+----------+---------------+---------------+----------+
+1 row in set (0.001 sec)
 
 ```
 
@@ -172,40 +167,39 @@ MariaDB [mytable]> DESC phonecontact;
 MEETINGPOINT
 
 ```
-MariaDB [mytable]> DESC meetingpoint;
-+-----------+--------------+------+-----+---------+-------+
-| Field     | Type         | Null | Key | Default | Extra |
-+-----------+--------------+------+-----+---------+-------+
-| id        | int(11)      | NO   | PRI | NULL    |       |
-| datee     | varchar(255) | YES  |     | NULL    |       |
-| hour      | varchar(255) | YES  |     | NULL    |       |
-| location  | varchar(255) | YES  |     | NULL    |       |
-| firstname | varchar(255) | YES  |     | NULL    |       |
-| lastname  | varchar(255) | YES  |     | NULL    |       |
-| phone     | varchar(255) | YES  |     | NULL    |       |
-| email     | varchar(255) | YES  |     | NULL    |       |
-| notice    | varchar(255) | YES  |     | NULL    |       |
-| editNum   | tinyint(1)   | YES  |     | NULL    |       |
-| editName  | tinyint(1)   | YES  |     | NULL    |       |
-+-----------+--------------+------+-----+---------+-------+
-11 rows in set (0.005 sec)
-
+MariaDB [mytable]> SELECT * FROM meetingpoint;
++----+------------------+-------+----------+-----------+----------+-------+-------+--------+---------+----------+
+| id | datee            | hour  | location | firstname | lastname | phone | email | notice | editNum | editName |
++----+------------------+-------+----------+-----------+----------+-------+-------+--------+---------+----------+
+|  1 | 07-07-2021 14:00 | 14:00 |          |           |          |       |       |        |       0 |        0 |
+|  2 | 06-07-2021 13:00 | 13:00 |          |           |          |       |       |        |       0 |        0 |
+|  3 | 06-07-2024 12:00 | 12:00 |          |           |          |       |       |        |       0 |        0 |
+|  4 | 02-10-2023 18:00 | 18:00 |          |           |          |       |       |        |       0 |        0 |
+|  5 | 02-10-2023 16:00 | 16:00 |          |           |          |       |       |        |       0 |        0 |
+|  6 | 02-10-2022 19:00 | 19:00 |          |           |          |       |       |        |       0 |        0 |
+|  7 | 02-10-2021 15:00 | 15:00 |          |           |          |       |       |        |       0 |        0 |
+|  8 | 06-07-2024 11:00 | 11:00 |          |           |          |       |       |        |       0 |        0 |
+|  9 | 07-07-2021 10:00 | 10:00 |          |           |          |       |       |        |       0 |        0 |
+| 10 | 07-07-2021 11:00 | 11:00 |          |           |          |       |       |        |       0 |        0 |
++----+------------------+-------+----------+-----------+----------+-------+-------+--------+---------+----------+
+10 rows in set (0.001 sec)
 ```
 
-FORMATTING DATE
+## FORMATTING DATE
 
 ```
-app.get('/api/getByDateHour', async(request:Request,
+app.get('/api/getByDate', async(request:Request,
   response:Response):Promise<void> => {
   try {
-    const result = await pool.query("SELECT *, STR_TO_DATE(datee, '%d-%m-%Y'\
-      GET_FORMAT(DATE, 'EUR')) FROM meetingpoint\
-      ORDER BY datee ASC");
+    const result = await pool.query("SELECT * FROM meetingpoint \
+      WHERE DATE(STR_TO_DATE(datee, '%d-%m-%Y %H:%i'))\
+      ORDER BY DATE(STR_TO_DATE(datee, '%d-%m-%Y %H:%i')) ASC");
     response.status(200).json(result);
   } catch (err) {
     throw err;
+  }
+});
 ```
-
 
 ## Error Handling
 

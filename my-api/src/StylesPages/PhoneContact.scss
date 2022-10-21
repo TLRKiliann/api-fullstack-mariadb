@@ -29,8 +29,8 @@ summary {
   /*border: 2px solid white;*/ 
 }
 
-details p {
-  margin: auto 20px;
+details li {
+  margin: 3px 40px;
 }
 
 .searchSwitch {
@@ -180,7 +180,7 @@ details p {
 
 .inter--data {
   width: 100%;
-
+  padding: 10px 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -189,8 +189,7 @@ details p {
 }
 
 .divphone--data {
-  width: 320px;
-  margin: 10px 0px;
+  width: 35%;
   margin-right: 20px;
   display: flex;
   flex-direction: column;
@@ -198,29 +197,50 @@ details p {
 }
 
 .divphone--data p {
-  margin: 5px 20px;
+  margin: 3px 0px;
   font-size: 1.0rem;
 }
 
 .divphone--datasec {
-  width: 320px;
-  margin-right: 20px;
+  width: 35%;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
   align-items: left;
 }
 
 .divphone--datasec p {
-  margin: 5px 20px;
+  margin: 3px 20px;
   font-size: 1.0rem;
 }
 
 .locationphone--data {
-  width: 500px;
+  width: 60%;
   margin: 0px 10px;
   display: flex;
   flex-direction: left;
   align-items: center;
   text-align: justify;
   font-size: 1.0rem;
+}
+
+.btn--phonedelete {
+  padding: 5px 10px;
+
+  font-family: 'Consolas';
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  background: linear-gradient(160deg, royalblue, blue, navy);
+  border: 1px solid dodgerblue;
+  box-shadow: 0px 0px 3px whitesmoke;
+  border-radius: 3px;
+  color: whitesmoke;
+}
+
+.btn--phonedelete:hover {
+  background: lightblue;
+  border: 1px solid lightblue;
+  color: blue;
 }

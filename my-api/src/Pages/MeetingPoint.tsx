@@ -13,26 +13,25 @@ export const MeetingPoint:React.FC = () => {
 
   const [datee, setDatee] = useState<string>("");
   const [hour, setHour] = useState<string>("");
+
   const [location, setLocation] = useState<string>("");
 
   const [firstname, setFirstname] = useState<string>("");
   const [editFirstName, setEditFirstName] = useState<string>("");
+  const [changeName, setChangeName] = useState<boolean>(false);
 
   const [lastname, setLastname] = useState<string>("");
   
   const [phone, setPhone] = useState<string>("");
   const [editPhone, setEditPhone] = useState<string>("");
+  const [changeNumber, setChangeNumber] = useState<boolean>(false);
 
   const [email, setEmail] = useState<string>("");
   const [editEmail, setEditEmail] = useState<string>("");
+  const [changeEmail, setChangeEmail] = useState<boolean>(false);
 
   const [notice, setNotice] = useState<string>("");
   const [createNewMeeting, setCreatNewMeeting] = useState<boolean>(false);
-
-  //const [filterData, setFilterData] = useState<Array<DataType | any>>([]);
-  const [changeName, setChangeName] = useState<boolean>(false);
-  const [changeNumber, setChangeNumber] = useState<boolean>(false);
-  const [changeEmail, setChangeEmail] = useState<boolean>(false);
 
   useEffect(() => {
     meetingServices
@@ -55,18 +54,32 @@ export const MeetingPoint:React.FC = () => {
     setCreatNewMeeting(!createNewMeeting);
   };
 
-  const handleReorder = async () => {
-    console.log("handleReorder clicked !");
+  const handleReorderDate = async () => {
+    console.log("Date clicked !");
 
     await meetingServices
-      .getByOrder()
+      .getByOrderDate()
       .then(initialNote => {
         setDatas(initialNote);
       })
-    console.log("No problems !");
+      .catch((error) => {
+        console.log("error", error)
+      })
   };
 
-  console.log(handleReorder)
+  const handleReorderHour = async () => {
+    console.log("Hour clicked !");
+
+    await meetingServices
+      .getByOrderHour()
+      .then(initialNote => {
+        setDatas(initialNote);
+      })
+      .catch((error) => {
+        console.log("error", error)
+      })
+  };
+
   console.log("After handleReorder", datas)
   //Create new appointment (POST method)
   const generateId = () => {
@@ -81,7 +94,7 @@ export const MeetingPoint:React.FC = () => {
     event.preventDefault();
     const dataObject = {
       id: generateId(),
-      datee: datee,
+      datee: datee + " " + hour,
       hour: hour,
       location: location,
       firstname: firstname,
@@ -126,7 +139,7 @@ export const MeetingPoint:React.FC = () => {
         setNewDatas(newDatas.concat(newDataObject))
       })
       .catch((error) => {
-        console.log("error with create new register !");
+        console.log("error with create new phone contact !");
         setNewDatas([]);
       })
     alert(`Data saved OK !`);
@@ -152,7 +165,7 @@ export const MeetingPoint:React.FC = () => {
         setDatas(datas.map(data => data.id === id 
           ? {
             id: data.id,
-            datee: data.datee,
+            datee: data.datee + data.hour,
             hour: data.hour,
             location: data.location,
             firstname: data.firstname,
@@ -183,7 +196,7 @@ export const MeetingPoint:React.FC = () => {
         setDatas(datas.map(data => data.id === id 
           ? {
             id: data.id,
-            datee: data.datee,
+            datee: data.datee + data.hour,
             hour: data.hour,
             location: data.location,
             firstname: editFirstName,
@@ -222,7 +235,7 @@ export const MeetingPoint:React.FC = () => {
         setDatas(datas.map(data => data.id === id 
           ? {
             id: data.id,
-            datee: data.datee,
+            datee: data.datee + data.hour,
             hour: data.hour,
             location: data.location,
             firstname: data.firstname,
@@ -253,7 +266,7 @@ export const MeetingPoint:React.FC = () => {
         setDatas(datas.map(data => data.id === id
           ? {
             id: data.id,
-            datee: data.datee,
+            datee: data.datee + data.hour,
             hour: data.hour,
             location: data.location,
             firstname: data.firstname,
@@ -297,7 +310,7 @@ export const MeetingPoint:React.FC = () => {
         setDatas(datas.map(data => data.id === id
           ? {
             id: data.id,
-            datee: data.datee,
+            datee: data.datee + data.hour,
             hour: data.hour,
             location: data.location,
             firstname: data.firstname,
@@ -353,11 +366,19 @@ export const MeetingPoint:React.FC = () => {
           </button>
         </div>
 
-        <div className="appointment--reorder">
+        <div className="appointment--reorderDate">
           <button
-            onClick={handleReorder}
+            onClick={handleReorderDate}
           >
-            Reorder
+            Reorder By Date
+          </button>
+        </div>
+
+        <div className="appointment--reorderHour">
+          <button
+            onClick={handleReorderHour}
+          >
+            Reorder By Hour
           </button>
         </div>
 
@@ -465,9 +486,8 @@ export const MeetingPoint:React.FC = () => {
                     Note(s) :
                   </label>
                 </div>
-                <div>
+                <div className="text--areacreate">
                   <textarea
-                    className="text--areacreate"
                     rows={5}
                     cols={66}
                     wrap="soft"
