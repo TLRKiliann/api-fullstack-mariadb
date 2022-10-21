@@ -14,7 +14,8 @@ const deleteUrl: string = 'http://localhost:3001/getAllMembers';
 */
 
 const getUrl: string = '/api/getAllMembers';
-const getByO: string = '/api/getByDateHour';
+const getByO: string = '/api/getByDate';
+const getByH: string = '/api/getByHour';
 const postUrl: string = '/api/create';
 
 const putEditPhoneUrl: string = '/api/update';
@@ -34,8 +35,15 @@ const getAll = async () => {
   return await request.then((response: any) => response.data)
 };
 
-const getByOrder = async () => {
+//Date
+const getByOrderDate = async () => {
   const request = app.get<DataTypeProps>(getByO)
+  return await request.then((response: any) => response.data)
+}
+
+//Hour
+const getByOrderHour = async () => {
+  const request = app.get<DataTypeProps>(getByH)
   return await request.then((response: any) => response.data)
 }
 
@@ -120,7 +128,7 @@ const updateValEmail = (id: number, formData: any) => {
   }
 };
 
-
+//Delete
 const remove = async (id: number): Promise<void> => {
     const request = app.delete<any>(`${deleteUrl}/${id}`)
     await request.then((response: any) => response.data)
@@ -140,7 +148,8 @@ const remove = async (id: number): Promise<void> => {
 
 const functionToCall = {
   getAll,
-  getByOrder,
+  getByOrderDate,
+  getByOrderHour,
   create,
   updateNumber,
   updateValNum,
