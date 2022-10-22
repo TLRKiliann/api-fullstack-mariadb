@@ -15,6 +15,7 @@ const meetingUpdateMail = require('./routes/meetingUpdateEmail');
 //const meetingDeleteById = require('./routes/meetingDelete');
 const createForContact = require('./routes/createPhoneContact');
 const orderByName = require('./routes/phoneOrderByName');
+const meetLastnameUrl = require('./routes/updateLastname');
 
 const app = express();
 
@@ -143,7 +144,7 @@ app.use('/api/updatemail/:id', meetingUpdateMail);
 //app.use('/api/delete/:id', meetingDeleteById);
 app.use('/api/createPhone', createForContact);
 app.use('/api/getByName', orderByName);
-
+app.use('/api/updatelastname/:id', meetLastnameUrl);
 
 app.listen(PORT, (): void => {
   console.log(`[+] Server is running on port ${PORT} !`)
