@@ -14,9 +14,10 @@ const deleteUrl: string = 'http://localhost:3001/getAllMembers';
 */
 
 const getUrl: string = '/api/getAllMembers';
+const postUrl: string = '/api/create';
+
 const getByO: string = '/api/getByDate';
 const getByH: string = '/api/getByHour';
-const postUrl: string = '/api/create';
 
 const putEditPhoneUrl: string = '/api/update';
 const putPhoneUrl: string = '/api/updateNum';
@@ -24,10 +25,11 @@ const putPhoneUrl: string = '/api/updateNum';
 const putEditNameUrl: string = '/api/updatename';
 const putValidNameUrl: string = '/api/updatevalname';
 
+const updateLastnameUrl: string = '/api/updatelastname';
+
 const putValidEmailUrl: string = '/api/updatemail';
 
 const deleteUrl: string = '/api/delete';
-//const URL_API = 'http://localhost:5000';
 
 //GET
 const getAll = async () => {
@@ -53,36 +55,6 @@ const create = (formData: any) => {
   return request.then((response: any) => response.data)
 };
 
-//PUT number
-const updateNumber = (id: number, formData: any) => {
-  try {
-    let request = app.put<any>(`${putEditPhoneUrl}/${id}`, formData)
-    console.log("request-1 !!!", request)
-    return request.then((response: any) => response.data)
-  } catch (err: any) {
-    console.error("Error response PUT-1:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
-    throw err;
-    }
-};
-
-//PUT number
-const updateValNum = (id: number, formData: any) => {
-  try {
-    let request = app.put<any>(`${putPhoneUrl}/${id}`, formData)
-    console.log("request-2 !!!", request)
-    return request.then((response: any) => response.data)
-  } catch (err: any) {
-    console.error("Error response PUT-2:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
-    throw err;
-  }
-};
-
 //PUT firstname
 const updateName = (id: number, formData: any) => {
   try {
@@ -106,6 +78,50 @@ const updateValName = (id: number, formData: any) => {
     return request.then((response: any) => response.data)
   } catch (err: any) {
     console.error("Error response PUT:");
+    console.error("erd", err.response.data);    // ***
+    console.error("ers", err.response.status);  // ***
+    console.error("erh", err.response.headers); // ***
+    throw err;
+  }
+};
+
+//PUT lastname
+const putLastname = (id: number, formData: any) => {
+  try {
+    let request = app.put<any>(`${updateLastnameUrl}/${id}`, formData)
+    return request.then((response: any) => response.data);
+  } catch (err: any) {
+    console.error("Error response PUT:");
+    console.error("erd", err.response.data);    // ***
+    console.error("ers", err.response.status);  // ***
+    console.error("erh", err.response.headers); // ***
+    throw err;
+  }
+};
+
+//PUT number
+const updateNumber = (id: number, formData: any) => {
+  try {
+    let request = app.put<any>(`${putEditPhoneUrl}/${id}`, formData)
+    console.log("request-1 !!!", request)
+    return request.then((response: any) => response.data)
+  } catch (err: any) {
+    console.error("Error response PUT-1:");
+    console.error("erd", err.response.data);    // ***
+    console.error("ers", err.response.status);  // ***
+    console.error("erh", err.response.headers); // ***
+    throw err;
+    }
+};
+
+//PUT number
+const updateValNum = (id: number, formData: any) => {
+  try {
+    let request = app.put<any>(`${putPhoneUrl}/${id}`, formData)
+    console.log("request-2 !!!", request)
+    return request.then((response: any) => response.data)
+  } catch (err: any) {
+    console.error("Error response PUT-2:");
     console.error("erd", err.response.data);    // ***
     console.error("ers", err.response.status);  // ***
     console.error("erh", err.response.headers); // ***
@@ -151,10 +167,11 @@ const functionToCall = {
   getByOrderDate,
   getByOrderHour,
   create,
-  updateNumber,
-  updateValNum,
   updateName,
   updateValName,
+  putLastname,
+  updateNumber,
+  updateValNum,
   updateValEmail,
   remove
 };

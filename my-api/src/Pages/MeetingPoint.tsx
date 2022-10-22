@@ -20,8 +20,10 @@ export const MeetingPoint:React.FC = () => {
   const [editFirstName, setEditFirstName] = useState<string>("");
   const [changeName, setChangeName] = useState<boolean>(false);
 
+  const [searchTheLastName, setSearchTheLastName] = useState<string>("");
   const [lastname, setLastname] = useState<string>("");
-  
+  const [editLastname, setEditLastname] = useState<string>("");
+
   const [phone, setPhone] = useState<string>("");
   const [editPhone, setEditPhone] = useState<string>("");
   const [changeNumber, setChangeNumber] = useState<boolean>(false);
@@ -33,7 +35,9 @@ export const MeetingPoint:React.FC = () => {
   const [notice, setNotice] = useState<string>("");
   const [createNewMeeting, setCreatNewMeeting] = useState<boolean>(false);
 
-  const [switchLastname, setSwitchLasname] = useState<boolean>(false);
+  const [switchLastname, setSwitchLastname] = useState<boolean>(false);
+  const [changeLastname, setChangeLastname] = useState<boolean>(false);
+
 
   useEffect(() => {
     meetingServices
@@ -70,7 +74,6 @@ export const MeetingPoint:React.FC = () => {
   };
 
   const handleReorderHour = async () => {
-    //console.log("Hour clicked !");
 
     await meetingServices
       .getByOrderHour()
@@ -82,7 +85,6 @@ export const MeetingPoint:React.FC = () => {
       })
   };
 
-  //console.log("After handleReorder", datas)
   //Create new appointment (POST method)
   const generateId = () => {
     const maxId = datas.length > 0
@@ -121,7 +123,27 @@ export const MeetingPoint:React.FC = () => {
     setCreatNewMeeting(false);
   };
 
-  //console.log("newDatas 1", newDatas);
+  //To search by lastname to caps search.
+  const handleChangeLastname = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTheLastName(event.target.value);
+  };
+
+  const handleSearchByLast = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setSearchTheLastName(searchTheLastName)
+    const lastnameToSearch = datas.map(data => data).filter(data => {
+      return data.lastname === searchTheLastName 
+        ? `${data.firstname} : ${data.lastname} : ${data.location} :
+          ${data.phone} ${data.email} ${data.notice}`
+        : null
+      });
+    event.preventDefault();
+    if (searchTheLastName === "") {
+      setNewDatas([]);
+    } else {
+      setNewDatas(lastnameToSearch)
+      setSearchTheLastName("");
+    }
+  };
 
   //PHONECONTACT
   const handleRegister = (id: number) => {
@@ -218,6 +240,46 @@ export const MeetingPoint:React.FC = () => {
     setEditFirstName("");
   };
 
+  const handleEditLastname = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEditLastname(event.target.value);
+  };
+
+  const handleUpdateLastname = (id: number) => {
+    const data = datas.find(data => data.id === id);
+    setEditLastname(data ? data.lastname : null);
+    setChangeLastname(!changeLastname); //miss
+  };
+
+  const validateLastname = (id: number) => {
+    const data = datas.find(data => data.id === id);
+    const lastnameObj = {...data, lastname: editLastname} //miss?
+    setChangeLastname(!changeLastname); //miss
+
+    meetingServices
+      .putLastname(id, lastnameObj)
+      .then(returnObj => {
+        setDatas(datas.map(data => data.id === id
+          ? {
+            id: data.id,
+            datee: data.datee + data.hour,
+            hour: data.hour,
+            location: data.location,
+            firstname: data.firstname,
+            lastname: editLastname,
+            phone: data.phone,
+            email: data.email,
+            notice: data.notice,
+            editNum: data.editNum,
+            editName: data.editName
+          } : data
+        ))
+      })
+      .catch((error) => {
+        alert(`Lastname: ${data.lastname} not found !`)
+        setDatas(datas.filter(data => data.id !== id))
+      })
+    setEditLastname("");
+  };
 
   //To change note.number
   const handleChangeNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -334,7 +396,6 @@ export const MeetingPoint:React.FC = () => {
     setEditEmail("");
   };
 
-
   //DELETE
   const handleDelete = (id: number) => {
     const data = datas.find(data => data.id === id);
@@ -355,8 +416,8 @@ export const MeetingPoint:React.FC = () => {
     }
   };
 
-  const handleSearchLasname = () => {
-    setSwitchLasname(!switchLastname);
+  const handleSearchLastname = () => {
+    setSwitchLastname(!switchLastname);
   };
 
   return (
@@ -370,7 +431,7 @@ export const MeetingPoint:React.FC = () => {
             <div className="div--topcruze">
               <p
                 className="lastname--cruze"
-                onClick={handleSearchLasname}
+                onClick={handleSearchLastname}
               >
                 X
               </p>
@@ -378,26 +439,39 @@ export const MeetingPoint:React.FC = () => {
 
             <h2>Search By Lastname</h2>
 
-            <div className="input--btnlastnamesearch">
+            <div
+              className="input--btnlastnamesearch"
+            >
               <input
                 type="text"
-
-                value=""
-              
+                value={searchTheLastName}
+                onChange={handleChangeLastname}
                 placeholder="Enter lastname here..."
                 style={{padding: '5px 3px'}} 
               />
-              <button>
+              <button onClick={handleSearchByLast}>
                 Search
               </button>
             </div>
 
             <p style={{color: 'lightgreen'}}>Response of your Request :</p>
-            <span>
-              Value of search Value of searcValue of searc
-              Value of searc Value of searc Value of searc
-              Value of searc Value of searc Value of searc
+
+            {newDatas.map(newData => (
+              <span
+                key={newData.id}
+                className="span--lastname"
+              >
+              <ul style={{padding: '20px 20px'}}>
+                <li>Lastname: {newData.lastname}</li>
+                <li>Firstname: {newData.firstname}</li>
+                <li>Location: {newData.location}</li>
+                <li>Phone: {newData.phone}</li>
+                <li>Email: {newData.email}</li>
+                <li>Notice: {newData.notice}</li>
+              </ul>
             </span>
+          ))}
+
           </div>
         </div>
       ) : null}
@@ -430,7 +504,7 @@ export const MeetingPoint:React.FC = () => {
 
         <div className="appointment--searchLastname">
           <button
-            onClick={handleSearchLasname}>
+            onClick={handleSearchLastname}>
             Search By Lastname
           </button>
         </div>
@@ -570,52 +644,62 @@ export const MeetingPoint:React.FC = () => {
             key={data?.id}
             id={data?.id}
             
-            datee={data.datee}
+            datee={data?.datee}
             setDatee={setDatee}
-            hour={data.hour}
+            hour={data?.hour}
             setHour={setHour}
-            location={data.location}
+            location={data?.location}
             setLocation={setLocation}
 
-            firstname={data.firstname}
+            firstname={data?.firstname}
             setFirstname={setFirstname}
             editFirstName={editFirstName}
 
-            editName={data.editName}
+            editName={data?.editName}
             changeName={changeName}
 
-            lastname={data.lastname}
-            setLastname={setLastname}
 
-            phone={data.phone}
+            lastname={data?.lastname}
+            setLastname={setLastname}
+            editLastname={editLastname}
+            changeLastname={changeLastname}
+
+
+            phone={data?.phone}
             editPhone={editPhone}
             setPhone={setPhone}
 
-            editNum={data.editNum}
+            editNum={data?.editNum}
             changeNumber={changeNumber}
 
-            email={data.email}
+            email={data?.email}
             setEmail={setEmail}
             editEmail={editEmail}
             changeEmail={changeEmail}
 
-            notice={data.notice}
+            notice={data?.notice}
             setNotice={setNotice}
 
             handleChangeFirstName={(event) => handleChangeFirstName(event)}
-            handleFirstNameSwitch={() => handleFirstNameSwitch(data.id)}
-            validateFirstName={() => validateFirstName(data.id)}
+            handleFirstNameSwitch={() => handleFirstNameSwitch(data?.id)}
+            validateFirstName={() => validateFirstName(data?.id)}
+
+
+            handleEditLastname={(event) => handleEditLastname(event)}
+            handleUpdateLastname={() => handleUpdateLastname(data?.id)}
+            validateLastname={() => validateLastname(data?.id)}
+
 
             handleChangeNumber={(event) => handleChangeNumber(event)}
-            validateNumber={() => validateNumber(data.id)}
-            handleUpdate={() => handleUpdate(data.id)}
+            validateNumber={() => validateNumber(data?.id)}
+            handleUpdate={() => handleUpdate(data?.id)}
 
             handleChangeEmail={(event) => handleChangeEmail(event)}
-            handleUpdateEmail={() => handleUpdateEmail(data.id)} 
-            handleValidateEmail={() => handleValidateEmail(data.id)}
+            handleUpdateEmail={() => handleUpdateEmail(data?.id)} 
+            handleValidateEmail={() => handleValidateEmail(data?.id)}
 
-            handleRegister={() => handleRegister(data.id)}
-            handleDelete={() => handleDelete(data.id)}
+            handleRegister={() => handleRegister(data?.id)}
+            handleDelete={() => handleDelete(data?.id)}
           />
         ))}
       </div>
