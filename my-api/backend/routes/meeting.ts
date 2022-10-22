@@ -1,9 +1,9 @@
-import express, {Request, Response, NextFunction} from 'express';
+import express, {Request, Response} from 'express';
 
 const router = express.Router();
 
 const pool = require('../dbConnection');
-//const connection = new pool();
+
 const connection = pool;
 
 
