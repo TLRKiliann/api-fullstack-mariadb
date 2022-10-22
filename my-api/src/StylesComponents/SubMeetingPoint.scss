@@ -1,14 +1,14 @@
 /*SubMeeting*/
 
 .mainfirst--div {
-  margin: 10px auto;
+  margin: 10px 20px;
   height: auto;
   display: flex;
   align-items: center;
 }
 
 .first--data {
-  width: 860px;
+  width: 820px;
   height: auto;
   margin: 0px 0px;
   margin-left: 23%;
@@ -19,9 +19,8 @@
   justify-content: left;
   background: linear-gradient(170deg, #1e90ff, blue, navy);
   border-radius: 15px;
-  border: 1px solid whitesmoke;
-  box-shadow: 0px 0px 2px #3b3c47;
-  color: white;
+  box-shadow: 0px 0px 5px cyan;
+  color: cyan;
 }
 
 .capsview--div {
@@ -41,8 +40,7 @@
 }
 
 .caps--div {
-  width: 100%;
-  margin: 10px auto;
+  margin-right: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -88,18 +86,22 @@
   justify-content: right;
 }
 
-.pinput--date input {
+.input--date input {
   margin: 5px 0px;
-  padding: 0px 5px;
-  width: 80px;
-  font-size: 0.9rem;
-  background: lightgrey;
+  padding: 1px 3px;
+  width: 86px;
+  font-size: 1.0rem;
+  background: blue;
+  border: 1px solid blue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px cyan;
+  color: cyan;
 }
 
 .right--div {
-  width: 450px;
+  margin: auto;
   display: flex;
-  padding: 0px 10px;
+  padding: 0px 0px;
 }
 
 .right--divhour {
@@ -109,17 +111,17 @@
   justify-content: right;
 }
 
-.input--hour {
-  display: flex;
-  justify-content: left;
-  background: lightgrey;
-}
-
 .input--hour input {
-  width: 40px;
+  width: 44px;
+  padding: 1px 3px;
   display: flex;
   justify-content: left;
-  background: lightgrey;
+  font-size: 1.0rem;
+  background: blue;
+  border: 1px solid blue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px cyan;
+  color: cyan;
 }
 
 .input--right {
@@ -129,39 +131,43 @@
 }
 
 .input--right input {
-  font-size: 0.9rem;
-  background: lightgrey;
+  width: 180px;
+  padding: 2px 6px;
+  font-size: 1.0rem;
+  background: blue;
+  border: 1px solid blue;
+  box-shadow: 0px 0px 2px cyan;
+  color: cyan;
 }
 
+.input--right input:hover {
 
-/*TRUC QUI BLOCK PADDING BTN!!!*/
+  background: blue;
+  border-color: 1px solid navy;
+  color: cyan;
+}
+
+/*BTN PANEL*/
 
 .changephone--div {
-  margin: auto;
+  margin: auto 10px;
   display: flex;
 }
 
 .changephone--div input {
+  margin-right: 12px;
   font-size: 0.9rem;
 }
-
-/*TRUC QUI BLOCK PADDING BTN!!!*/
-
 .btn--modify {
-  margin: auto;
-  margin-left: 10px;
-  padding: 3px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
 
-  font-family: 'Consolas';
-  font-size: 0.9rem;
   background: linear-gradient(170deg, royalblue, navy);
   border: 1px solid royalblue;
   border-radius: 3px;
-  box-shadow: 0px 0px 3px white;
-  color: white;
+  box-shadow: 0px 0px 2px whitesmoke;
+  color: #1c9e9e;
 }
 
 .btn--modify:hover {
@@ -211,10 +217,13 @@
 
 .input--location input {
   width: 100%;
-  padding: 0px 6px;
+  padding: 2px 6px;
   width: 500px;
-  font-size: 0.9rem;
-  background: lightgrey;
+  font-size: 1.0rem;
+  background: blue;
+  border: 1px solid blue;
+  box-shadow: 0px 0px 2px cyan;
+  color: cyan;
 }
 
 .a--location {
@@ -230,8 +239,8 @@
   background: linear-gradient(170deg, royalblue, navy);
   border: 1px solid royalblue;
   border-radius: 7px;
-  box-shadow: 0px 0px 5px white;
-  color: white;
+  box-shadow: 0px 0px 3px whitesmoke;
+  color: #1c9e9e;
 }
 
 .hwg--a:hover {
@@ -250,6 +259,7 @@
 /*Textarea of second component*/
 
 .caps--textarea {
+  margin-top: 5px;
   display: flex;
 }
 
@@ -261,12 +271,16 @@
 }
 
 .text--area {
-  width: 710px;
+  width: 665px;
   height: 60px;
+  padding: 3px 6px;
   margin-left: 10px;
   margin: 10px;
   font-size: 0.9rem;
-  background: lightgrey;
+  background: blue;
+  border: 1px solid blue;
+  box-shadow: 0px 0px 2px cyan;
+  color: cyan;
 }
 
 /*BTN of second component*/
@@ -279,6 +293,7 @@
 .btn--meetingdelete button {
   width: 100px;
   margin: 10px 10px;
+  margin-left: 20px;
   padding: 5px 10px;
 
   font-family: 'Consolas';
@@ -286,8 +301,8 @@
   background: linear-gradient(170deg, royalblue, navy);
   border: 1px solid royalblue;
   border-radius: 3px;
-  box-shadow: 0px 0px 5px white;
-  color: white;
+  box-shadow: 0px 0px 2px #1c9e9e;
+  color: #1c9e9e;
 }
 
 .btn--meetingdelete button:hover {
@@ -297,10 +312,16 @@
   color: blue;
 }
 
-.delete--btn {
-  margin-right: 10px;
+.delete--meetingbtn {
+
 }
 
 .input--visiblecolor {
-  color: red;
+  padding: 0px 6px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  background: blue;
+  border: 1px solid blue;
+  box-shadow: 0px 0px 5px orange;
+  color: orange;
 }

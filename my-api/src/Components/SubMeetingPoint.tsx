@@ -8,7 +8,6 @@ import '../StylesComponents/SubMeetingPoint.scss';
 
 
 type SubMeetingPointProps = {
-  //data: string | number | boolean;
   id: number | any;
   editNum: boolean;
   editName: boolean;
@@ -46,7 +45,6 @@ type SubMeetingPointProps = {
   notice: string;
   setNotice: React.Dispatch<React.SetStateAction<string>>;
 
-  //handleRegister: (event: React.MouseEvent<HTMLButtonElement>) => void;
   handleRegister: (id: number) => void;
 
   handleEditLastname: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -100,7 +98,7 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
               </button>
               <p>Date : </p>
             </div>
-            <div className="pinput--date">
+            <div className="input--date">
               <input
                 value={props.datee.slice(0,10)}
                 onChange={(event) => props.setDatee(event.target.value)} />
@@ -190,10 +188,10 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
                     ) : null
                   }
                 </div>
-              ): null}
+                ) : null
+              }
 
 
-              <div className="caps--div">
 
               {!props.changeName ? (
 
@@ -238,12 +236,10 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
                   </div>
                   ) : null
                 }
-
+                </div>
+                ) : null
+              }
               </div>
-              ) : null
-            }
-            </div>
-
 
 
               <div className="caps--div">
@@ -290,8 +286,9 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
                     ) : null
                   }
                 </div>
-                ): null}
-              </div>
+                ) : null
+              }
+
 
 
               {!props.changeNumber ? (
@@ -338,12 +335,11 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
                 </div>
                 ) : null
               }
-
               </div>
 
               <div className="caps--textarea">
                 <div className="subtextarea">
-                  <p>Note(s) : </p>
+                  <p style={{fontWeight: 'bold'}}>Note(s) : </p>
                   <textarea
                     className="text--area" 
                     value={props.notice}
@@ -356,6 +352,7 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
                 handleDelete={() => props.handleDelete(props.id)}
                 handleRegister={() => props.handleRegister(props.id)}
               />
+
           </div>
           ) : null
         }
