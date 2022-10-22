@@ -2,7 +2,7 @@
 
 Backend modules : 
 
-**express - mariadb - cors - dotenv - TypeScript**
+**express - mariadb (in LAN) - cors - dotenv - TypeScript**
 
 ---
 
@@ -10,7 +10,7 @@ Backend modules :
 
 └─ $ ▶ npm init
 
-JSON-SERVER
+### JSON-SERVER
 
 (index.js) => server.ts
 
@@ -18,7 +18,7 @@ JSON-SERVER
 
 └─ $ ▶ npm install --save-dev nodemon
 
-TYPESCRIPT
+### TYPESCRIPT
 
 └─ $ ▶ npm install -g typescript
 
@@ -44,7 +44,7 @@ TYPESCRIPT
 	"server": "json-server -p3001 --watch db.json"
 ```
 
-**CMD Line**
+### CMD Line
 
 └─ $ ▶ npm start (server.js)
 
@@ -74,7 +74,7 @@ jwt json web token for more security.
 
 ---
 
-## Access-Control-Allow-... for headers
+### Access-Control-Allow-... for headers
 
 ```
 app.use(function(req, res, next) {
@@ -90,7 +90,7 @@ app.use(function(req, res, next) {
 
 ---
 
-## Connection sever with dotenv
+### Connection sever with dotenv
 
 server.js
 
