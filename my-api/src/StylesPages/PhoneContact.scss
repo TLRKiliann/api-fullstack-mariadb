@@ -43,7 +43,7 @@ details li {
 .searchSwitch button {
   width: 180px;
   margin-left: 40px;
-  padding: 8px 10px;
+  padding: 5px 10px;
   font-family: 'Consolas';
   font-weight: bold;
   background: #3b3c47;
@@ -60,6 +60,11 @@ details li {
   color: blue;
 }
 
+
+
+
+
+
 .searchByName {
   width: 250px;
   display: flex;
@@ -69,7 +74,7 @@ details li {
   width: 180px;
   margin-top: 14px;
   margin-left: 40px;
-  padding: 8px 10px;
+  padding: 5px 10px;
   font-family: 'Consolas';
   font-weight: bold;
   background: #3b3c47;
@@ -78,6 +83,11 @@ details li {
   box-shadow: 0px 0px 1px #000;
   color: white;
 }
+
+
+
+
+
 
 .searchByName button:hover {
   background: lightblue;
@@ -121,10 +131,10 @@ details li {
   display: flex;
   flex-direction: column;
   background: linear-gradient(170deg, royalblue, blue, navy);
-  border-radius: 20px;
-  box-shadow: 0px 0px 7px white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 7px cyan;
   opacity: 1;
-  color: cyan;
+  color: #31dddd;
 
   animation-name: magicsearch;
   animation-delay: 0s;
@@ -148,6 +158,7 @@ details li {
 
 .sub--search h2 {
   font-size: 2rem;
+  color: #31dddd;
 }
 
 .sub--searchnext {
@@ -158,27 +169,43 @@ details li {
 .sub--searchnext input {
   width: 300px;
   margin-top: 10px;
-  padding: 5px 3px;
+  padding: 5px 6px;
   font-family: 'Consolas';
   font-size: 1.2rem;
-  background: lightgrey;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 3px;
 }
 
 .sub--searchnext button {
   margin-top: 50px;
   padding: 5px 40px;
   font-size: 1.2rem;
-  background: linear-gradient(170deg, royalblue, blue, royalblue);
+  background: linear-gradient(160deg, royalblue, blue, navy);
+  border: 1px solid cyan;
+  box-shadow: 0px 0px 4px whitesmoke;
   border-radius: 3px;
-  border: 1px solid royalblue;
-  box-shadow: 0px 0px 3px white;
-  color: cyan;
+  color: #31dddd;
 }
 
+
+
+
+
+
 .sub--searchnext button:hover {
-  background: linear-gradient(170deg, lightblue, lightblue, blue);
-  color: blue;
+  background: linear-gradient(170deg, lightblue, royalblue, blue);
+  border: 1px solid blue;
+  box-shadow: 0px 0px 0px navy;
+  color: white;
 }
+
+
+
+
+
+
+
 
 .sub--searchnext button:active {
   transform: scale(1.1);

@@ -447,6 +447,7 @@ export const MeetingPoint:React.FC = () => {
                 value={searchTheLastName}
                 onChange={handleChangeLastname}
                 placeholder="Enter lastname here..."
+                autoFocus={true}
                 style={{padding: '5px 3px'}} 
               />
               <button onClick={handleSearchByLast}>
@@ -459,11 +460,11 @@ export const MeetingPoint:React.FC = () => {
             </p>
 
             {newDatas.map(newData => (
-              <span
+              <div
                 key={newData.id}
                 className="span--lastname"
               >
-              <ul style={{padding: '20px 20px'}}>
+              <ul style={{padding: '20px 10px'}}>
                 <li>Lastname: {newData.lastname}</li>
                 <li>Firstname: {newData.firstname}</li>
                 <li>Location: {newData.location}</li>
@@ -471,7 +472,7 @@ export const MeetingPoint:React.FC = () => {
                 <li>Email: {newData.email}</li>
                 <li>Notice: {newData.notice}</li>
               </ul>
-            </span>
+              </div>
           ))}
 
           </div>
@@ -507,7 +508,7 @@ export const MeetingPoint:React.FC = () => {
         <div className="appointment--searchLastname">
           <button
             onClick={handleSearchLastname}>
-            Search By Lastname
+            {!switchLastname ? "Search By Lastname" : "Hide Frame"}
           </button>
         </div>
 
@@ -545,7 +546,7 @@ export const MeetingPoint:React.FC = () => {
                   type="text"
                   onChange={(e) => setDatee(e.target.value)}
                   autoFocus
-                  placeholder="00-00-0000" />
+                  placeholder="00-00-0000 (d-m-year)" />
               </div>
 
               <div className="divMP--content">
@@ -566,7 +567,7 @@ export const MeetingPoint:React.FC = () => {
                   style={{width: '240px'}}
                   type="text"
                   onChange={(e) => setLocation(e.target.value)}
-                  placeholder="Chemin du Devin, 1012 Lausanne" />
+                  placeholder="Via da Mez 164, 7742 Poschiavo" />
               </div>
               
               <div className="divMP--content">
@@ -596,7 +597,7 @@ export const MeetingPoint:React.FC = () => {
                 <input
                   type="text"
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="333 333 22 22" />
+                  placeholder="032 287 23 44" />
               </div>
 
               <div className="divMP--content">

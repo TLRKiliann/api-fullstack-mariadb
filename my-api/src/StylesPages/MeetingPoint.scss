@@ -14,12 +14,13 @@
 .dash--searchLastname {
   position: absolute;
   top: 30%;
-  left: 30%;
-  width: 40%;
+  left: 33%;
+
+  width: 620px;
   padding-top: 10px;
   padding-bottom: 20px;
 
-  background: blue;
+  background: linear-gradient(170deg, royalblue, blue, navy);
   border-radius: 15px;
   box-shadow: 0px 0px 7px cyan;
   z-index: 10;
@@ -35,13 +36,13 @@
   height: 25px;
   top: 0px;
   right: 20px;
-
   background: lightgrey;
   border-radius: 50%;
 }
 
 .lastname--cruze {
   cursor: pointer;
+  font-size: 1.2rem !important;
   color: blue !important;
 }
 
@@ -63,22 +64,46 @@
   color: #31dddd;
 }
 
+
+
 .input--btnlastnamesearch input {
+  font-size: 1.0rem;
   margin-right: 10px;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 3px;
 }
 
 .input--btnlastnamesearch button {
   width: 100px;
   margin: 10px 10px;
-  padding: 5px 0px;
+  padding: 6px 0px;
 
+  font-size: 1.0rem;
   font-weight: bold;
-  background: linear-gradient(170deg, royalblue, navy);
-  border: 1px solid royalblue;
-  border-radius: 3px;
+
+  background: linear-gradient(160deg, royalblue, blue, navy);
+  border: 1px solid cyan;
   box-shadow: 0px 0px 4px whitesmoke;
-  color: whitesmoke;
+  border-radius: 3px;
+  color: #31dddd;
 }
+
+
+
+
+
+.input--btnlastnamesearch button:hover {
+  background: linear-gradient(170deg, lightblue, royalblue, blue);
+  border: 1px solid blue;
+  box-shadow: 0px 0px 0px navy;
+  color: white;
+}
+
+
+
+
+
 
 .subdash--searchLastname p {
   font-family: 'Consolas';
@@ -87,19 +112,25 @@
   color: #31dddd;
 }
 
-.span--lastname {
+.span--lastname > ul {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: left;
+
+  border: 1px dotted #31dddd;; 
 }
 
 .span--lastname li {
-  width: 70%;
-  margin: 1% 20%;
+  width: 100%;
+  margin: 1% 2%;
   display: flex;
   list-style: circle;
   font-size: 0.9rem;
   font-weight: bold;
-  color: whitesmoke;
+  color: #31dddd;
+
 }
 
 /*END of searchLastname*/
@@ -146,6 +177,10 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
+
 
 .appointment--reorderDate button {
   width: 300px;
@@ -256,6 +291,8 @@
   color: navy;
 }
 
+
+
 /*Create meetingPoint*/
 
 .frameofsearch {
@@ -268,7 +305,7 @@
   flex-direction: column;
   background: linear-gradient(170deg, royalblue, blue, navy);
   border-radius: 15px;
-  box-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 7px cyan;
 }
 
 .div--xclose {
@@ -309,10 +346,16 @@
   font-weight: bold;
 }
 
+.divMP--content label {
+  color: #31dddd; 
+}
+
 .divMP--content input {
   padding: 1px 5px;
   margin-left: 10px;
-  background: lightgrey;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 3px;
 }
 
 .div--textarealabel label {
@@ -323,6 +366,7 @@
   align-items: center;
   justify-content: left;
   font-weight: bold;
+  color: #31dddd;
 }
 
 .text--areacreate {
@@ -334,6 +378,9 @@
 .text--areacreate textarea {
   margin: 5px 0px;
   padding: 1px 5px;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 3px;
 }
 
 /*BTN Save New Appointment*/
@@ -346,8 +393,13 @@
   justify-content: center;
 }
 
+
+
+
+
+
 .btn--createmeeting {
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 1rem;
   font-weight: bold;
 
@@ -358,10 +410,16 @@
   color: #31dddd;
 }
 
+
+
+
+
+
 .btn--createmeeting:hover {
-  background: lightblue;
-  border: 1px solid lightblue;
-  color: blue;
+  background: linear-gradient(170deg, lightblue, royalblue, blue);
+  border: 1px solid blue;
+  box-shadow: 0px 0px 0px navy;
+  color: white;
 }
 
 .create--div {
