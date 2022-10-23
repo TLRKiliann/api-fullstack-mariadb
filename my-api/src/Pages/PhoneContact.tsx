@@ -45,7 +45,7 @@ export const PhoneContact:React.FC = () => {
     setSearchName(searchName);
     const retrievePhone = secDatas.map(secData => secData).filter(secData => {
       return secData.firstname === searchName
-        ? `${secData.firstname} ${secData.phone}` : null;
+        ? `${secData.firstname} ${secData.phone}` : null
     })
     event.preventDefault();
     if (searchName === "") {
@@ -124,7 +124,7 @@ export const PhoneContact:React.FC = () => {
               value={searchName} 
               onChange={writterName}
               autoFocus={true}
-              placeholder="Enter name of contact"
+              placeholder="Enter firstname of contact"
             />
           </div>
           <div className="sub--searchnext">

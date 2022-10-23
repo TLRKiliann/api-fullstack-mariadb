@@ -19,8 +19,8 @@
   justify-content: left;
   background: linear-gradient(170deg, #1e90ff, blue, navy);
   border-radius: 15px;
-  box-shadow: 0px 0px 5px cyan;
-  color: cyan;
+  box-shadow: 0px 0px 3px cyan;
+  color: #31dddd;
 }
 
 .capsview--div {
@@ -91,17 +91,11 @@
   padding: 1px 3px;
   width: 86px;
   font-size: 1.0rem;
-  background: blue;
-  border: 1px solid blue;
+  background: lightblue;
+  border: 1px solid lightblue;
   border-radius: 5px;
   box-shadow: 0px 0px 3px cyan;
-  color: cyan;
-}
-
-.right--div {
-  margin: auto;
-  display: flex;
-  padding: 0px 0px;
+  color: blue;
 }
 
 .right--divhour {
@@ -117,77 +111,11 @@
   display: flex;
   justify-content: left;
   font-size: 1.0rem;
-  background: blue;
-  border: 1px solid blue;
+  background: lightblue;
+  border: 1px solid lightblue;
   border-radius: 5px;
   box-shadow: 0px 0px 3px cyan;
-  color: cyan;
-}
-
-.input--right {
-  margin: auto 10px;
-  display: flex;
-  justify-content: right;
-}
-
-.input--right input {
-  width: 180px;
-  padding: 2px 6px;
-  font-size: 1.0rem;
-  background: blue;
-  border: 1px solid blue;
-  box-shadow: 0px 0px 2px cyan;
-  color: cyan;
-}
-
-.input--right input:hover {
-
-  background: blue;
-  border-color: 1px solid navy;
-  color: cyan;
-}
-
-/*BTN PANEL*/
-
-.changephone--div {
-  margin: auto 10px;
-  display: flex;
-}
-
-.changephone--div input {
-  margin-right: 12px;
-  font-size: 0.9rem;
-}
-.btn--modify {
-  padding: 5px 20px;
-  font-weight: bold;
-  font-size: 0.8rem;
-
-  background: linear-gradient(170deg, royalblue, navy);
-  border: 1px solid royalblue;
-  border-radius: 3px;
-  box-shadow: 0px 0px 2px whitesmoke;
-  color: #1c9e9e;
-}
-
-.btn--modify:hover {
-  background: lightblue;
-  border-radius: 5px;
-  box-shadow: 0px 0px 0px white;
   color: blue;
-}
-
-.changephone--btndiv {
-  margin: auto;
-  margin-left: 10px;
-  display: flex;
-  flex-direction: row;
-}
-
-.changephone--btndiv button {
-  width: 60px;
-  margin: auto;
-  padding: 5px 0px;
 }
 
 /*Location-Map second component*/
@@ -220,10 +148,11 @@
   padding: 2px 6px;
   width: 500px;
   font-size: 1.0rem;
-  background: blue;
-  border: 1px solid blue;
-  box-shadow: 0px 0px 2px cyan;
-  color: cyan;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px whitesmoke;
+  color: blue;
 }
 
 .a--location {
@@ -237,10 +166,11 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(170deg, royalblue, navy);
+
   border: 1px solid royalblue;
-  border-radius: 7px;
-  box-shadow: 0px 0px 3px whitesmoke;
-  color: #1c9e9e;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px cyan;
+  color: #31dddd;
 }
 
 .hwg--a:hover {
@@ -249,12 +179,93 @@
   color: blue;
 }
 
+/*Input & BTN*/
+
 .right--div {
   margin: auto;
+  padding: 0px 0px;
+
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
+.input--right {
+  margin: auto 10px;
+  display: flex;
+  justify-content: right;
+}
+
+.input--right input {
+  width: 180px;
+  padding: 2px 6px;
+  font-size: 1.0rem;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px whitesmoke;
+  color: blue;
+}
+
+.input--right input:hover {
+  background: blue;
+  border-color: 1px solid dodgerblue;
+  box-shadow: 0px 0px 5px #31dddd;
+  color: #31dddd;
+}
+
+/*BTN PANEL*/
+
+.changephone--div {
+  margin: auto 10px;
+  display: flex;
+}
+
+.changephone--div input {
+  width: 200px;
+  margin-right: 12px;
+  font-size: 1.0rem;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+
+  background: blue;
+  border-color: 1px solid dodgerblue;
+  box-shadow: 0px 0px 5px #31dddd;
+  color: #31dddd;
+}
+
+.btn--modify {
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+
+  background: linear-gradient(170deg, royalblue, navy);
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px cyan;
+  color: #31dddd;
+}
+
+.btn--modify:hover {
+  background: lightblue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px white;
+  color: blue;
+}
+
+.changephone--btndiv {
+  margin: auto;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.changephone--btndiv button {
+  width: 60px;
+  margin: auto;
+  padding: 5px 0px;
+}
+
 
 /*Textarea of second component*/
 
@@ -277,10 +288,11 @@
   margin-left: 10px;
   margin: 10px;
   font-size: 0.9rem;
-  background: blue;
-  border: 1px solid blue;
-  box-shadow: 0px 0px 2px cyan;
-  color: cyan;
+  background: lightblue;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px whitesmoke;
+  color: blue;
 }
 
 /*BTN of second component*/
@@ -301,8 +313,8 @@
   background: linear-gradient(170deg, royalblue, navy);
   border: 1px solid royalblue;
   border-radius: 3px;
-  box-shadow: 0px 0px 2px #1c9e9e;
-  color: #1c9e9e;
+  box-shadow: 0px 0px 5px cyan;
+  color: #31dddd;
 }
 
 .btn--meetingdelete button:hover {
@@ -319,9 +331,5 @@
 .input--visiblecolor {
   padding: 0px 6px;
   margin-right: 10px;
-  font-size: 0.9rem;
-  background: blue;
-  border: 1px solid blue;
-  box-shadow: 0px 0px 5px orange;
-  color: orange;
+
 }

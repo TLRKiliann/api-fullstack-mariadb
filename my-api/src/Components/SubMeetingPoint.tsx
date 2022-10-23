@@ -66,7 +66,7 @@ type SubMeetingPointProps = {
   handleDelete: (id: number | any) => void;
 };
 
-const SubMeetingPoint = (props: SubMeetingPointProps) => {
+const SubMeetingPoint:React.FC<SubMeetingPointProps> = (props) => {
 
   const [showMeetingPoint, setShowMeetingPoint] = useState<boolean>(false);
 
@@ -90,20 +90,25 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
         <div className="capsview--div">
 
           <div className="left--divview">
+
             <div className="pview--left">
               <button onClick={handleShow}>
                 {showMeetingPoint 
                   ? <FaRegEyeSlash size={24} style={styles} /> 
                   : <AiFillEye size={24} style={styles} />}
               </button>
+
               <p>Date : </p>
             </div>
+
             <div className="input--date">
               <input
                 value={props.datee.slice(0,10)}
                 onChange={(event) => props.setDatee(event.target.value)} />
             </div>
+
           </div>
+
           <div className="right--divhour">
             <div className="pview--left">
               <p>Hour : </p>
@@ -114,10 +119,12 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
                 onChange={(event) => props.setHour(event.target.value)} />
             </div>
           </div>
+
         </div>
 
         {showMeetingPoint ? (
           <div>
+
             <div className="caps--location">
 
               <div className="p--location">
@@ -148,10 +155,13 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
             <div className="caps--div">
 
               {!props.changeLastname ? (
+
                 <div className="left--div">
+
                   <div className="p--left">
                     <p>Firstname : </p>
                   </div>
+
                   <div className="input--right">
                     <input
                       value={props.firstname}
@@ -208,129 +218,130 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
                     />
                   </div>
 
-                {props.changeLastname ? (
-
-                  <div className="changephone--div">
-                    <input
-                      className="input--visiblecolor"
-                      value={props.editLastname}
-                      onChange={props.handleEditLastname}
-                    />
-                    <button
-                      className="btn--modify"
-                      onClick={() => props.validateLastname(props.id)}>
-                      Save
-                    </button>
-                  </div>
-                  ) : null
-                }
-
-                {!props.changeLastname ? (
-
-                  <div className="changephone--btndiv">
-                    <button
-                      className="btn--modify"
-                      onClick={() => props.handleUpdateLastname(props.id)}>
-                      Modify
-                    </button>
-                  </div>
-                  ) : null
-                }
-                </div>
-                ) : null
-              }
-              </div>
-
-
-              <div className="caps--div">
-
-              {!props.changeEmail ? (                
-              
-                <div className="left--div">
-                  <div className="p--left">
-                    <p>Phone : </p>
-                  </div>
-                  <div className="input--right">
-                    <input
-                      value={props.phone}
-                      onChange={(event) => props.setPhone(event.target.value)}
-                    />
-                  </div>
-
-                  {props.changeNumber ? (
+                  {props.changeLastname ? (
 
                     <div className="changephone--div">
                       <input
                         className="input--visiblecolor"
-                        value={props.editPhone}
-                        onChange={props.handleChangeNumber}
+                        value={props.editLastname}
+                        onChange={props.handleEditLastname}
                       />
-                      <button 
+                      <button
                         className="btn--modify"
-                        onClick={() => props.validateNumber(props.id)}>
+                        onClick={() => props.validateLastname(props.id)}>
                         Save
                       </button>
                     </div>
                     ) : null
                   }
 
-                  {!props.changeNumber ? (
+                  {!props.changeLastname ? (
 
                     <div className="changephone--btndiv">
                       <button
                         className="btn--modify"
-                        onClick={() => props.handleUpdate(props.id)}>
+                        onClick={() => props.handleUpdateLastname(props.id)}>
                         Modify
                       </button>
                     </div>
                     ) : null
                   }
+                  </div>
+                  ) : null
+                }
                 </div>
-                ) : null
-              }
 
 
+                <div className="caps--div">
 
-              {!props.changeNumber ? (
-
-                <div className="right--div">
-                  <div className="p--left">
-                    <p>Email : </p>
-                  </div>
-                  <div className="input--right">
-                    <input
-                      value={props.email}
-                      onChange={(event) => props.setEmail(event.target.value)} />
-                  </div>
-
-                  {props.changeEmail ? (
-
-                    <div className="changephone--div">
+                {!props.changeEmail ? (
+                
+                  <div className="left--div">
+                    <div className="p--left">
+                      <p>Phone : </p>
+                    </div>
+                    <div className="input--right">
                       <input
-                        className="input--visiblecolor"
-                        value={props.editEmail}
-                        onChange={props.handleChangeEmail}
+                        value={props.phone}
+                        onChange={(event) => props.setPhone(event.target.value)}
                       />
-                      <button 
-                        className="btn--modify"
-                        onClick={() => props.handleValidateEmail(props.id)}>
-                        Save
-                      </button>
                     </div>
-                    ) : null
-                  }
 
-                  {!props.changeEmail ? (
+                    {props.changeNumber ? (
 
-                    <div className="changephone--btndiv">
-                      <button
-                        className="btn--modify"
-                          onClick={() => props.handleUpdateEmail(props.id)}>
-                        Modify
-                      </button>
+                      <div className="changephone--div">
+                        <input
+                          className="input--visiblecolor"
+                          value={props.editPhone}
+                          onChange={props.handleChangeNumber}
+                        />
+                        <button 
+                          className="btn--modify"
+                          onClick={() => props.validateNumber(props.id)}>
+                          Save
+                        </button>
+                      </div>
+                      ) : null
+                    }
+
+                    {!props.changeNumber ? (
+
+                      <div className="changephone--btndiv">
+                        <button
+                          className="btn--modify"
+                          onClick={() => props.handleUpdate(props.id)}>
+                          Modify
+                        </button>
+                      </div>
+                      ) : null
+                    }
+                  </div>
+                  ) : null
+                }
+
+
+                {!props.changeNumber ? (
+
+                  <div className="right--div">
+                    <div className="p--left">
+                      <p>Email : </p>
                     </div>
-                    ) : null
-                  }
+                    <div className="input--right">
+                      <input
+                        style={{fontSize: '0.9rem', padding: '5px 6px'}}
+                        value={props.email}
+                        onChange={(event) => props.setEmail(event.target.value)} />
+                    </div>
+
+                    {props.changeEmail ? (
+
+                      <div className="changephone--div">
+                        <input
+                          style={{fontSize: '0.9rem'}}
+                          className="input--visiblecolor"
+                          value={props.editEmail}
+                          onChange={props.handleChangeEmail}
+                        />
+                        <button 
+                          className="btn--modify"
+                          onClick={() => props.handleValidateEmail(props.id)}>
+                          Save
+                        </button>
+                      </div>
+                      ) : null
+                    }
+
+                    {!props.changeEmail ? (
+
+                      <div className="changephone--btndiv">
+                        <button
+                          className="btn--modify"
+                            onClick={() => props.handleUpdateEmail(props.id)}>
+                          Modify
+                        </button>
+                      </div>
+                      ) : null
+                    }
 
                 </div>
                 ) : null
@@ -360,6 +371,6 @@ const SubMeetingPoint = (props: SubMeetingPointProps) => {
       </div>
     </div>
   )
-}
+};
 
 export default SubMeetingPoint;
