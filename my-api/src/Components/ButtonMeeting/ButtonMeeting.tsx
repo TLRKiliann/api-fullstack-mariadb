@@ -4,7 +4,7 @@ type ButtonMeetingProps = {
   handleRegister: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const ButtonMeeting = (props: ButtonMeetingProps) => {
+const ButtonMeeting:React.FC<ButtonMeetingProps> = (props) => {
   return (
     <div className="btn--meetingdelete">
       <button

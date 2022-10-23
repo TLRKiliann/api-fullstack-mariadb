@@ -21,11 +21,11 @@ type AuthContextProps = {
 
 const AuthContext = createContext({} as AuthContextProps);
 
-export function useAuthLogin() {
+export const useAuthLogin = () => {
     return useContext(AuthContext)
 };
 
-export function AuthProvider({ children }: Props) {
+export const AuthProvider:React.FC<Props> = ({ children }) => {
 
     const [auth, setAuth] = useState<object>({});
     const [switchLogin, setSwitchLogin] = useState(true);

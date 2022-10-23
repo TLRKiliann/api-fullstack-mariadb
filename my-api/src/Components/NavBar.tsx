@@ -4,7 +4,7 @@ import imageLogo from '../assets/images/koala_tree.png';
 import '../StylesComponents/NavBar.scss';
 
 
-export const NavBar = () => {
+export const NavBar:React.FC = () => {
   const { switchLogin, usrEmail, toggle, eraseAll } = useAuthLogin();
 
   const handleChange = () => {
