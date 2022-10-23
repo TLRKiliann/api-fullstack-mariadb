@@ -8,14 +8,14 @@ const ButtonMeeting = (props: ButtonMeetingProps) => {
   return (
     <div className="btn--meetingdelete">
       <button
-        className="delete--btn"
+        className="delete--meetingbtn"
         onClick={() => props.handleDelete(props.id)}
       >
         Delete
       </button>
 
       <button
-        className="register--btn"
+        className="register--meetingbtn"
         onClick={() => props.handleRegister(props.id)}
       >
         Register

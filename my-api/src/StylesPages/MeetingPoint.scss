@@ -43,7 +43,6 @@
 .lastname--cruze {
   cursor: pointer;
   color: blue;
-
 }
 
 .lastname--cruze:hover {
@@ -57,28 +56,21 @@
   margin: auto;
   width: 80%;
   text-align: center;
-
-  border: 2px solid red;
 }
 
 .subdash--searchLastname h2 {
   font-size: 1.8rem;
   color: lightgreen;
-
-  border: 2px solid red;
 }
 
 .input--btnlastnamesearch input {
   margin-right: 10px;
-
-  border: 1px solid yellow;
 }
 
 .input--btnlastnamesearch button {
   width: 100px;
   margin: 10px 10px;
   padding: 5px 0px;
-
 
   font-weight: bold;
   background: linear-gradient(170deg, royalblue, navy);
@@ -91,18 +83,21 @@
 .subdash--searchLastname p {
   font-size: 1.2rem;
   font-weight: bold;
-
-  border: 1px solid yellow;
 }
 
-.subdash--searchLastname span {
+.span--lastname {
   display: flex;
-  text-align: justify;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: orange;
+  flex-direction: column;
+}
 
-  border: 1px solid yellow;
+.span--lastname li {
+  width: 70%;
+  margin: 1% 20%;
+  display: flex;
+  list-style: circle;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: whitesmoke;
 }
 
 /*END of searchLastname*/

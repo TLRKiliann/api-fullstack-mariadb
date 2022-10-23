@@ -24,7 +24,7 @@ summary {
   width: 60px;
   padding: 10px 10px;
   font-size: 1.4rem;
-  color: lightgreen;
+  color: cyan;
 
   /*border: 2px solid white;*/ 
 }
@@ -124,7 +124,7 @@ details li {
   border-radius: 20px;
   box-shadow: 0px 0px 7px white;
   opacity: 1;
-  color: lightgreen;
+  color: cyan;
 
   animation-name: magicsearch;
   animation-delay: 0s;
@@ -172,7 +172,7 @@ details li {
   border-radius: 3px;
   border: 1px solid royalblue;
   box-shadow: 0px 0px 3px white;
-  color: lightgreen;
+  color: cyan;
 }
 
 .sub--searchnext button:hover {
@@ -183,7 +183,7 @@ details li {
 .sub--searchnext button:active {
   transform: scale(1.1);
   background: navy;
-  color: lightgreen;
+  color: cyan;
 }
 
 .sub--searchnext p {
@@ -205,7 +205,7 @@ details li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 1px solid lightgreen;
+  border-bottom: 1px solid cyan;
 }
 
 .inter--data {
@@ -215,7 +215,7 @@ details li {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  color: lightgreen;
+  color: cyan;
 }
 
 .divphone--data {
