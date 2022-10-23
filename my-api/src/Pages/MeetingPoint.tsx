@@ -454,7 +454,9 @@ export const MeetingPoint:React.FC = () => {
               </button>
             </div>
 
-            <p style={{color: 'lightgreen'}}>Response of your Request :</p>
+            <p>
+              Response of your Request :
+            </p>
 
             {newDatas.map(newData => (
               <span
@@ -715,4 +717,4 @@ export const MeetingPoint:React.FC = () => {
       ))}
     </div>
   )
-}
+};

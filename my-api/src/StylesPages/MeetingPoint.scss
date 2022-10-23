@@ -32,9 +32,9 @@
 .div--topcruze p {
   position: absolute;
   width: 25px;
+  height: 25px;
   top: 0px;
   right: 20px;
-
 
   background: lightgrey;
   border-radius: 50%;
@@ -42,15 +42,14 @@
 
 .lastname--cruze {
   cursor: pointer;
-  color: blue;
+  color: blue !important;
 }
 
 .lastname--cruze:hover {
-  color: white;
+  color: white !important;
   background: blue;
   border: 1px solid blue;
 }
-
 
 .subdash--searchLastname {
   margin: auto;
@@ -59,8 +58,9 @@
 }
 
 .subdash--searchLastname h2 {
+  font-family: 'Consolas';
   font-size: 1.8rem;
-  color: lightgreen;
+  color: #31dddd;
 }
 
 .input--btnlastnamesearch input {
@@ -81,8 +81,10 @@
 }
 
 .subdash--searchLastname p {
+  font-family: 'Consolas';
   font-size: 1.2rem;
   font-weight: bold;
+  color: #31dddd;
 }
 
 .span--lastname {
@@ -122,8 +124,8 @@
   background: #3b3c47;
   border: 1px solid #3b3c47;
   border-radius: 3px;
-  box-shadow: 0px 0px 1px #000;
-  color: white;
+  box-shadow: 0px 0px 3px cyan;
+  color: whitesmoke;
 }
 
 .appointment--switch button:hover {
@@ -131,23 +133,12 @@
   border: 1px solid royalblue;
   border-radius: 3px;
   box-shadow: 0px 0px 0px white;
-  color: blue;
+  color: navy;
 }
 
 .appointment--reorderDate {
   position: absolute;
   top: 214px;
-  left: 40px;
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.appointment--reorderHour {
-  position: absolute;
-  top: 258px;
   left: 40px;
   width: 200px;
   display: flex;
@@ -163,8 +154,27 @@
   background: #3b3c47;
   border: 1px solid #3b3c47;
   border-radius: 3px;
-  box-shadow: 0px 0px 1px #000;
-  color: white;
+  box-shadow: 0px 0px 3px cyan;
+  color: whitesmoke;
+}
+
+.appointment--reorderDate button:hover {
+  background: lightblue;
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 0px 0px 0px white;
+  color: navy;
+}
+
+.appointment--reorderHour {
+  position: absolute;
+  top: 258px;
+  left: 40px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .appointment--reorderHour button {
@@ -174,16 +184,8 @@
   background: #3b3c47;
   border: 1px solid #3b3c47;
   border-radius: 3px;
-  box-shadow: 0px 0px 1px #000;
-  color: white;
-}
-
-.appointment--reorderDate button:hover {
-  background: lightblue;
-  border: 1px solid royalblue;
-  border-radius: 3px;
-  box-shadow: 0px 0px 0px white;
-  color: blue;
+  box-shadow: 0px 0px 3px cyan;
+  color: whitesmoke;
 }
 
 .appointment--reorderHour button:hover {
@@ -191,7 +193,7 @@
   border: 1px solid royalblue;
   border-radius: 3px;
   box-shadow: 0px 0px 0px white;
-  color: blue;
+  color: navy;
 }
 
 .appointment--searchLastname {
@@ -212,8 +214,8 @@
   background: #3b3c47;
   border: 1px solid #3b3c47;
   border-radius: 3px;
-  box-shadow: 0px 0px 1px #000;
-  color: white;
+  box-shadow: 0px 0px 3px cyan;
+  color: whitesmoke;
 }
 
 .appointment--searchLastname button:hover {
@@ -221,7 +223,7 @@
   border: 1px solid royalblue;
   border-radius: 3px;
   box-shadow: 0px 0px 0px white;
-  color: blue;
+  color: navy;
 }
 
 .appointment--refresh {
@@ -242,8 +244,8 @@
   background: #3b3c47;
   border: 1px solid #3b3c47;
   border-radius: 3px;
-  box-shadow: 0px 0px 1px #000;
-  color: white;
+  box-shadow: 0px 0px 3px cyan;
+  color: whitesmoke;
 }
 
 .appointment--refresh button:hover {
@@ -251,7 +253,7 @@
   border: 1px solid royalblue;
   border-radius: 3px;
   box-shadow: 0px 0px 0px white;
-  color: blue;
+  color: navy;
 }
 
 /*Create meetingPoint*/
@@ -294,7 +296,7 @@
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
-  color: lightgreen;
+  color: #31dddd;
 }
 
 .divMP--content {
@@ -353,7 +355,7 @@
   border: 1px solid cyan;
   box-shadow: 0px 0px 4px whitesmoke;
   border-radius: 3px;
-  color: whitesmoke;
+  color: #31dddd;
 }
 
 .btn--createmeeting:hover {
