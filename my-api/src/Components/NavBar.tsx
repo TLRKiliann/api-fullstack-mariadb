@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAuthLogin } from "../Context/AuthProvider";
 import imageLogo from '../assets/images/koala_tree.png';
+import { GiPowerButton } from 'react-icons/gi';
 import '../StylesComponents/NavBar.scss';
 
 
@@ -46,13 +47,14 @@ export const NavBar:React.FC = () => {
         {usrEmail ? (
           <span 
             style={{
-              margin: "0px 10px",
+              margin: "0px 20px",
               padding: "10px",
               fontFamily: "Consolas",
               textShadow: "1px 1px 1px purple",
-              background: "steelblue",
-              borderRadius: "10px",
-              color: "white"
+              background: "#3b3c47",
+              border: "1px dashed grey",
+              borderRadius: "5px",
+              color: "whitesmoke"
             }}
           >
             {usrEmail}
@@ -101,23 +103,23 @@ export const NavBar:React.FC = () => {
             onClick={() => handleChange()}
             style={{
               marginRight: "20px",
-              width: "50px", 
-              height: "50px", 
-              position: "relative", 
+              padding: "2px 4px",
+              width: "40px", 
+              height: "40px",  
               display: "flex", 
               alignItems: "center",
               justifyContent: "center",
               fontFamily: "Consolas",
-              fontSize: "0.8rem",
+              fontSize: "0.9rem",
               textDecoration: "none",
-              color: "white",
-              background: "royalblue",
-              border: "1px solid royalblue",
+              color: "#31dddd",
+              background: "dimgrey",
+              boxShadow: "0px 0px 0px lightblue",
               borderRadius: "50%",
             }}
 
           >
-            Logout
+            <GiPowerButton size={16} />
           </Link>
         )}
       </div>

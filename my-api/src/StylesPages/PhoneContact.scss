@@ -49,7 +49,7 @@ details li {
   background: #3b3c47;
   border: 1px solid #3b3c47;
   border-radius: 3px;
-  box-shadow: 0px 0px 1px #000;
+  box-shadow: 0px 0px 3px cyan;
   color: white;
 }
 
@@ -57,13 +57,9 @@ details li {
   background: lightblue;
   border: 1px solid lightblue;
   border-radius: 3px;
+  box-shadow: 0px 0px 3px cyan;
   color: blue;
 }
-
-
-
-
-
 
 .searchByName {
   width: 250px;
@@ -80,14 +76,9 @@ details li {
   background: #3b3c47;
   border: 1px solid #3b3c47;
   border-radius: 3px;
-  box-shadow: 0px 0px 1px #000;
+  box-shadow: 0px 0px 3px cyan;
   color: white;
 }
-
-
-
-
-
 
 .searchByName button:hover {
   background: lightblue;
@@ -188,24 +179,12 @@ details li {
   color: #31dddd;
 }
 
-
-
-
-
-
 .sub--searchnext button:hover {
   background: linear-gradient(170deg, lightblue, royalblue, blue);
   border: 1px solid blue;
   box-shadow: 0px 0px 0px navy;
   color: white;
 }
-
-
-
-
-
-
-
 
 .sub--searchnext button:active {
   transform: scale(1.1);
@@ -290,14 +269,15 @@ details li {
   cursor: pointer;
 
   background: linear-gradient(160deg, royalblue, blue, navy);
-  border: 1px solid dodgerblue;
-  box-shadow: 0px 0px 3px whitesmoke;
+  border: 1px solid cyan;
+  box-shadow: 0px 0px 4px whitesmoke;
   border-radius: 3px;
-  color: whitesmoke;
+  color: #31dddd;
 }
 
 .btn--phonedelete:hover {
-  background: lightblue;
-  border: 1px solid lightblue;
-  color: blue;
+  background: linear-gradient(170deg, lightblue, royalblue, blue);
+  border: 1px solid blue;
+  box-shadow: 0px 0px 0px navy;
+  color: white;
 }

@@ -706,6 +706,11 @@ export const MeetingPoint:React.FC = () => {
           />
         ))}
       </div>
+    </div>
+  )
+};
+
+/*
       {newDatas.map(newData => (
         <span key={newData.id}>
           {newData.id}
@@ -716,6 +721,4 @@ export const MeetingPoint:React.FC = () => {
           {newData.location}
         </span>
       ))}
-    </div>
-  )
-};
+*/

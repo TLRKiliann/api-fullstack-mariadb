@@ -24,7 +24,22 @@
   border-radius: 15px;
   box-shadow: 0px 0px 7px cyan;
   z-index: 10;
+
+  animation-name: lastSearch;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-cont: 1;
 }
+
+@keyframes lastSearch {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .div--topcruze {
   psition: relative;
@@ -64,8 +79,6 @@
   color: #31dddd;
 }
 
-
-
 .input--btnlastnamesearch input {
   font-size: 1.0rem;
   margin-right: 10px;
@@ -89,21 +102,12 @@
   color: #31dddd;
 }
 
-
-
-
-
 .input--btnlastnamesearch button:hover {
   background: linear-gradient(170deg, lightblue, royalblue, blue);
   border: 1px solid blue;
   box-shadow: 0px 0px 0px navy;
   color: white;
 }
-
-
-
-
-
 
 .subdash--searchLastname p {
   font-family: 'Consolas';
@@ -177,10 +181,6 @@
   align-items: center;
   justify-content: center;
 }
-
-
-
-
 
 .appointment--reorderDate button {
   width: 300px;
@@ -291,8 +291,6 @@
   color: navy;
 }
 
-
-
 /*Create meetingPoint*/
 
 .frameofsearch {
@@ -306,6 +304,20 @@
   background: linear-gradient(170deg, royalblue, blue, navy);
   border-radius: 15px;
   box-shadow: 0px 0px 7px cyan;
+
+  animation-name: creatmeet;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-cont: 1;
+}
+
+@keyframes creatmeet {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .div--xclose {
@@ -393,11 +405,6 @@
   justify-content: center;
 }
 
-
-
-
-
-
 .btn--createmeeting {
   padding: 5px 10px;
   font-size: 1rem;
@@ -409,11 +416,6 @@
   border-radius: 3px;
   color: #31dddd;
 }
-
-
-
-
-
 
 .btn--createmeeting:hover {
   background: linear-gradient(170deg, lightblue, royalblue, blue);
