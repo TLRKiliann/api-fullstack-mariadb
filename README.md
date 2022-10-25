@@ -31,5 +31,5 @@ SCHEMA of this app:
 
 A request walkthrough this app as follow :
 
-MeetingPoint.tsx > Services/meetingServices.ts (axios) > server.ts (express) > routes > mariadb
+/src/Pages > Services (axios) > backend/server.ts (express) > backend/routes (express + mariadb)
 
