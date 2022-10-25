@@ -23,8 +23,9 @@ Front
 Backend
 
 - node
+- nodemon
 - express
-- mysql
+- mariadb
 
 SCHEMA of this app:
 
