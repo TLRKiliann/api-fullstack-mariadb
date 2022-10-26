@@ -50,7 +50,6 @@ export const NavBar:React.FC = () => {
               margin: "0px 20px",
               padding: "10px",
               fontFamily: "Consolas",
-              textShadow: "1px 1px 1px purple",
               background: "#3b3c47",
               border: "1px dashed grey",
               borderRadius: "5px",
