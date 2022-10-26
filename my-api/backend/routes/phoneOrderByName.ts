@@ -6,13 +6,13 @@ const pool = require('../dbConnection');
 
 const connection = pool;
 
-router.get('/', async (request:Request, response:Response) => {
-  const lastname: string = request.body.lastname;
+router.get('/', async (req:Request, res:Response) => {
+  const lastname: string = req.body.lastname;
   try {
     const resultName = await pool.query("SELECT * FROM\
       phonecontact ORDER BY lastname ASC",
     [lastname]);
-    response.status(200).json(resultName)
+    res.status(200).json(resultName)
   } catch (error) {
     throw error
   }
