@@ -6,6 +6,7 @@ type DataTypeProps = {
 };
 
 /*
+json-server path
 const getUrl: string = 'http://localhost:3001/getAllMembers';
 const putUrl: string = 'http://localhost:3001/getAllMembers';
 const putNameUrl: string = 'http://localhost:3001/getAllMembers';

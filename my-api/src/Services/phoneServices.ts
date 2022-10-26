@@ -5,13 +5,16 @@ type DataTypeContactProps = {
   datatype: DataTypeContact[]
 };
 
-//const getUrlPhone: string = 'http://localhost:3001/getAllPhone';
-const getUrlPhone: string = '/api/getAllPhone/';
-//const postUrl: string = 'http://localhost:3001/getAllPhone';
-const postUrl: string = '/api/createPhone/';
-//const deleteUrl: string = 'http://localhost:3001/getAllPhone';
-const deleteUrl: string = '/api/deletePhone';
+/*
+json-server path
+const getUrlPhone: string = 'http://localhost:3001/getAllPhone';
+const postUrl: string = 'http://localhost:3001/getAllPhone';
+const deleteUrl: string = 'http://localhost:3001/getAllPhone';
+*/
 
+const getUrlPhone: string = '/api/getAllPhone/';
+const postUrl: string = '/api/createPhone/';
+const deleteUrl: string = '/api/deletePhone';
 const getNamePhone: string = '/api/getByName';
 
 const getAllContact = async () => {
