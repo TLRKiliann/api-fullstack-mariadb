@@ -63,34 +63,36 @@ console.log("Idle connections: ", pool.idleConnections());
    return conn;
 }*/
 
-app.delete('/api/delete/:id', async (request:Request<{ id: number}>, response:Response, next:NextFunction) => {
-  const id = request.params.id;
+app.delete('/api/delete/:id', async (req:Request<{ id: number}>,
+  res:Response, next:NextFunction) => {
+  const id = req.params.id;
   try {
     const result = await pool.query('delete from meetingpoint where id = ?',
       [id]);
-    response.status(204).json("Meeting deleted successfully !");
+    res.status(204).json("Meeting deleted successfully !");
   } catch (err) {
     throw err;
   } 
 });
 
 //Delete phonecontact
-app.delete('/api/deletePhone/:id', async (request, response) => {
-  const id = request.params.id;
+app.delete('/api/deletePhone/:id', async (req:Request, res:Response, next:NextFunction) => {
+  const id = req.params.id;
   try {
     const result = await pool.query('delete from phonecontact where id = ?',
       [id]);
-    response.status(204).json("Phone deleted successfully !");
+    res.status(204).json("Phone deleted successfully !");
   } catch (err) {
     throw err;
-  } 
+  }
+  next();
 });
 
 //Login but with mariadb...
 //app.use('/login', login);
 //app.use('/login', routeLogin);
 //app.use('/signup', routeSignUp);
-app.post('/login', async (req, res, next) => {
+app.post('/login', async (req:Request, res:Response, next:NextFunction) => {
   const email:string = req.body.email;
   const password:string = req.body.password;
   try {
@@ -104,18 +106,19 @@ app.post('/login', async (req, res, next) => {
   next();
 });
 
-app.get('/api/getAllSignUp', async (request:Request,
-  response:Response):Promise<void> => {
+app.get('/api/getAllSignUp', async (req:Request,
+  res:Response, next:NextFunction):Promise<void> => {
   try {
       const result = await pool.query("select * from loggers");
-      response.status(200).json(result);
+      res.status(200).json(result);
   } catch (err) {
     throw err;
   }
+  next();
 });
 
 //SIGNUP
-app.post("/signup", async (req, res, next) => {
+app.post("/signup", async (req:Request, res:Response, next:NextFunction) => {
   const id = req.body.id;
   const name = req.body.name;
   const email = req.body.email;

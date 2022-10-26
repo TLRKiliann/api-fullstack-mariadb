@@ -6,10 +6,10 @@ const pool = require('../dbConnection');
 
 const connection = pool;
 
-router.get('/', async (request:Request, response:Response) => {
+router.get('/', async (req:Request, res:Response) => {
   try {
     const result = await pool.query("select * from phonecontact");
-    response.status(200).send(result);
+    res.status(200).send(result);
   } catch (err) {
     throw err;
   } 
