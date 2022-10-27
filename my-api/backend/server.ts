@@ -106,8 +106,7 @@ app.post('/login', async (req:Request, res:Response, next:NextFunction) => {
   next();
 });
 
-app.get('/api/getAllSignUp', async (req:Request,
-  res:Response, next:NextFunction):Promise<void> => {
+app.get('/api/getAllSignUp', async (req:Request, res:Response, next:NextFunction) => {
   try {
       const result = await pool.query("select * from loggers");
       res.status(200).json(result);
