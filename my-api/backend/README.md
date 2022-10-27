@@ -327,3 +327,30 @@ app.post('/api/createPhone', async (request:Request, response:Response) => {
   }*/
 });
 ```
+
+## Testing with TS & Jest
+
+└─ $ ▶ npm install ts-jest jest @types/jest ts-jest supertest @types/supertest
+
+└─ $ ▶ npx tsc --init
+
+(package.json)
+ 
+  "test": "jest --coverage",
+
+```
+import server from "server.ts";
+import * as request from "supertest";
+
+describe("GET / - a simple api endpoint", () => {
+  it("Hello API Request", async () => {
+    const result = await request(app).get("/api/getAllSignUp");
+    expect(result.text).toEqual("hello");
+    expect(result.statusCode).toEqual(200);
+  });
+});
+``` 
+
+└─ $ ▶ npm run test
+
+

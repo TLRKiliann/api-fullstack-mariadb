@@ -4,6 +4,14 @@ API-FULLSTACK_MARIADB was made by CRA + TypeScript :
 
 └─ $ ▶ npx create-react-app my-api --template typescript
 
+It's a CRA. So nth-check present vulnerabilties. To resolve that error, you can remove "react-scripts": "5.0.1" from `dependencies` to `devDependencies` in `package.json` file. (I believe that I've found this info on stack-overflow with error nth-check).
+
+(package.json):
+
+  "devDependencies": {
+    "react-scripts": "5.0.1", <--- right place for react-script.
+  }
+
 ---
 
 ## INSTALL
@@ -24,7 +32,7 @@ API-FULLSTACK_MARIADB was made by CRA + TypeScript :
 
 ---
 
-## TESTING
+## TESTING with Jest & TS
 
 - Create __tests__ folder in parallel as your script.
 - Create file for testing `../Components/__tests__/Login.test.tsx` for
@@ -32,14 +40,20 @@ API-FULLSTACK_MARIADB was made by CRA + TypeScript :
 - Create file Login.spec.tsx in __tests__ folder.
 
 
-└─ $ ▶ npm install --save-dev jest @types/jest @babel/preset-typescript
+└─ $ ▶ npm install --save-dev jest ts-jest @types/jest
 
-└─ $ ▶ npm install jest jest-styled-components react-test-renderer --save-dev
+└─ $ ▶ npm install --save-dev @babel/preset-typescript
 
 └─ $ ▶ npm install --save-dev react-test-renderer
 
 └─ $ ▶ npm install --save-dev @testing-library/react
 
+**Create file jest.config.js with this command :**
+
+└─ $ ▶ npx ts-jest config:init
+
+You can althought install extra module with :
+(└─ $ ▶ npm install --save-dev jest-styled-components)
 
 API .toMatchSnapshot()
 

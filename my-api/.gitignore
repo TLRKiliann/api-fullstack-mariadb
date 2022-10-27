@@ -18,8 +18,11 @@
 .env.test.local
 .env.production.local
 
-/backend/.env
 /certification
+/jest.config.js
+
+/backend/.env
+/backend/jest.config.ts
 
 npm-debug.log*
 yarn-debug.log*
