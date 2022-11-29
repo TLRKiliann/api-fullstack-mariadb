@@ -46,7 +46,7 @@ Backend
 - express
 - mariadb/mysql
 
-SCHEMA of this app:
+## SCHEMA of this app
 
 A request walkthrough this app as follow :
 
