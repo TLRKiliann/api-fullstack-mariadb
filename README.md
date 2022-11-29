@@ -32,6 +32,8 @@ that permit :
 **for client:**
 - to commmunicate only with your server by ssh:22 & MySQL:3306.
 
+---
+
 ## About this API:
 
 Front
